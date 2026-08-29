@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540"
+     preserveAspectRatio="xMidYMid slice" role="presentation">
+  <!-- Arte autoral gerada por arte.py, na linguagem do guia de identidade.
+       Substituível por foto real: ver .foto-tratada no style.css -->
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16290A"/>
+      <stop offset="55%" stop-color="#112005"/>
+      <stop offset="100%" stop-color="#0B1703"/>
+    </linearGradient>
+    <radialGradient id="brilho">
+      <stop offset="0%" stop-color="#46B148" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#46B148" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="brilho2">
+      <stop offset="0%" stop-color="#AFD745" stop-opacity=".30"/>
+      <stop offset="100%" stop-color="#AFD745" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="malha" width="46" height="46" patternUnits="userSpaceOnUse"
+             patternTransform="rotate(45)">
+      <path d="M0 0 H46 M0 0 V46" stroke="#AFD745" stroke-opacity=".16" stroke-width="1" fill="none"/>
+    </pattern>
+    <clipPath id="quadro">
+      <rect x="0" y="0" width="960" height="540" rx="18"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#quadro)">
+    <rect width="960" height="540" fill="url(#fundo)"/>
+    <rect width="960" height="540" fill="url(#malha)"/>
+    <circle cx="172" cy="140" r="441" fill="url(#brilho)"/>
+    <circle cx="172" cy="475" r="288" fill="url(#brilho2)"/>
+    <g transform="translate(269.4 59.4) scale(17.550)" fill="none" stroke="#AFD745" stroke-opacity=".13" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.4s-7.4-4.6-7.4-9.7A3.9 3.9 0 0 1 12 8.1a3.9 3.9 0 0 1 7.4 2.6c0 5.1-7.4 9.7-7.4 9.7z"/></g>
+    <path d="M480.0 108.0 L642.0 270.0 L480.0 432.0 L318.0 270.0 Z" fill="none" stroke="#AFD745" stroke-opacity=".22" stroke-width="2"/>
+    <path d="M480.0 124.2 L541.6 185.8 L480.0 247.3 L418.4 185.8 Z" fill="none" fill-opacity="0" stroke="#AFD745" stroke-opacity=".3" stroke-width="2"/>
+    <path d="M564.2 208.4 L625.8 270.0 L564.2 331.6 L502.7 270.0 Z" fill="#AFD745" fill-opacity=".85" stroke="#AFD745" stroke-opacity=".5" stroke-width="2"/>
+    <path d="M480.0 292.7 L541.6 354.2 L480.0 415.8 L418.4 354.2 Z" fill="none" fill-opacity="0" stroke="#AFD745" stroke-opacity=".3" stroke-width="2"/>
+    <path d="M395.8 208.4 L457.3 270.0 L395.8 331.6 L334.2 270.0 Z" fill="none" fill-opacity="0" stroke="#AFD745" stroke-opacity=".3" stroke-width="2"/>
+    <path d="M115.2 109.8 L124.2 118.8 L115.2 127.8 L106.2 118.8 Z" fill="#AFD745" fill-opacity="0.14"/>
+    <path d="M825.6 171.6 L837.6 183.6 L825.6 195.6 L813.6 183.6 Z" fill="#AFD745" fill-opacity="0.24"/>
+    <path d="M710.4 444.6 L719.4 453.6 L710.4 462.6 L701.4 453.6 Z" fill="#AFD745" fill-opacity="0.14"/>
+    <path d="M892.8 361.2 L898.8 367.2 L892.8 373.2 L886.8 367.2 Z" fill="#AFD745" fill-opacity="0.24"/>
+  </g>
+  <rect x=".75" y=".75" width="958.5" height="538.5" rx="17.5"
+        fill="none" stroke="#AFD745" stroke-opacity=".22" stroke-width="1.5"/>
+</svg>

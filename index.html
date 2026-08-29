@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================================================
+     PÁGINA: Home
+     SLUG (manter no WordPress): /
+     SEO title: Ágape SST | Medicina e Segurança do Trabalho para empresas
+     SEO meta description: Há mais de 25 anos em Medicina Ocupacional, Segurança do Trabalho, Treinamentos NRs e eSocial. Laudos com validade jurídica, prazos cumpridos e atendimento humanizado em todo o Brasil.
+     H1 único: a headline do hero. Demais seções usam H2.
+     ============================================================ -->
+<title>Ágape SST | Medicina e Segurança do Trabalho para empresas</title>
+<meta name="description" content="Há mais de 25 anos em Medicina Ocupacional, Segurança do Trabalho, Treinamentos NRs e eSocial. Laudos com validade jurídica, prazos cumpridos e atendimento humanizado em todo o Brasil.">
+<meta name="robots" content="noindex, nofollow"><!-- PROTÓTIPO: remover no site real -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- SCHEMA LocalBusiness — só com dados CONFIRMADOS pelo cliente.
+     Falta CNPJ e horário de funcionamento; completar na fase WordPress. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ágape Saúde e Segurança do Trabalho",
+  "description": "Medicina Ocupacional, Segurança do Trabalho, Treinamentos NRs e eSocial SST para empresas.",
+  "foundingDate": "1999",
+  "url": "https://www.agapesaudeseguranca.com.br",
+  "email": "mktecomercial@agapesaudeseguranca.com.br",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Pref. Carlos Ferreira Lopes, 703 — Edifício Helbor Dual — Salas 1301, 1302 e 1303",
+    "addressLocality": "Mogi das Cruzes",
+    "addressRegion": "SP",
+    "postalCode": "08773-490",
+    "addressCountry": "BR"
+  },
+  "telephone": "+551147263150",
+  "areaServed": "BR",
+  "sameAs": ["https://www.facebook.com/agapepericias", "https://www.instagram.com/agape.sst/", "https://www.linkedin.com/company/%C3%A1gape-sa%C3%BAde-e-seguran%C3%A7a-do-trabalho/"]
+}
+</script>
+</head>
+<body>
+
+<a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <!-- LOGOTIPO — PLACEHOLDER.
+     Reproduz a estrutura da assinatura oficial: símbolo de losangos
+     + wordmark "ágape" em caixa baixa + tagline. O símbolo aqui é uma
+     APROXIMAÇÃO: substituir pelo SVG vetorial oficial.
+     Regra do guia (item 02): versão preta sobre fundo claro, branca
+     sobre fundo escuro; não distorcer, inclinar nem aplicar efeitos. -->
+<a class="logo" href="index.html" aria-label="Ágape Saúde e Segurança do Trabalho — página inicial">
+  <span class="logo-marca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1.8L22.2 12 12 22.2 1.8 12z"/><path d="M12 1.8L17.1 6.9 12 12 6.9 6.9z"/><path d="M12 12l5.1 5.1L12 22.2 6.9 17.1z"/><path d="M8.4 12L12 8.4l3.6 3.6L12 15.6z"/></svg></span>
+  <span class="logo-texto">
+    <span class="logo-nome">ágape</span>
+    <span class="logo-sub">Saúde e Segurança do Trabalho</span>
+  </span>
+</a>
+
+    <!-- Menu mobile em CSS puro. No Elementor: menu responsivo nativo. -->
+    <input type="checkbox" id="abrir-menu" class="nav-check" aria-label="Abrir e fechar o menu">
+    <span class="nav-abre" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>
+
+    <nav class="site-nav" aria-label="Menu principal">
+      <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="sobre-nos/index.html">Sobre Nós</a></li>
+      <li><a href="servicos/index.html">Serviços</a></li>
+      <li><a href="contato/index.html">Contato</a></li>
+        <!-- ÁREA DO CLIENTE (SOC) — seção 5.5 do CLAUDE.md.
+             Item CONDICIONAL: só entra se a Ágape for assinante do SOC/SOCRH.
+             É apenas um link para o portal externo, não uma funcionalidade.
+             Descomente e aponte para a URL do portal quando confirmado.
+        <li><a href="#" target="_blank" rel="noopener">Área do Cliente</a></li>
+        -->
+        <li class="nav-cta-mobile">
+          <a class="btn btn--primario" href="contato/index.html#orcamento">Solicite um orçamento</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-acoes">
+      <a class="header-tel" href="tel:+551147263150"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 16.9v2.7a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 3.8 2h2.7a2 2 0 0 1 2 1.7c.12 1 .35 1.9.67 2.8a2 2 0 0 1-.45 2.1L7.6 9.7a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.45c.9.32 1.84.55 2.8.67a2 2 0 0 1 1.9 2.05z"/></svg> (11) 4726-3150</a>
+      <a class="btn btn--primario btn--pequeno" href="contato/index.html#orcamento">Solicite um orçamento</a>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- BLOCO 2: HERO — headline + subtítulo + CTA primário + WhatsApp secundário -->
+<section class="hero com-diagonal com-diagonal--para-alt">
+  <div class="container hero-grade">
+    <div>
+      <span class="olho">Medicina e Segurança do Trabalho</span>
+      <h1>Saúde e Segurança do Trabalho <em>com excelência</em></h1>
+      <p class="lead">Atuamos em todo o Brasil há mais de 25 anos com soluções completas em Medicina Ocupacional, Segurança do Trabalho, Treinamentos e eSocial. Garantimos laudos técnicos com validade jurídica, cumprimento de prazos e atendimento humanizado.</p>
+      <div class="grupo-botoes">
+        <a class="btn btn--primario" href="contato/index.html#orcamento">Solicite um orçamento</a>
+        <!-- WhatsApp é via SECUNDÁRIA (seção 5.1): existe, mas nunca sozinho. -->
+        <a class="btn btn--whatsapp" href="https://wa.me/5511934067014" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22.5l5.6-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.1 8.1 0 1 1 12 20.1z"/><path d="M17 14.3c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.15-.64.15s-.74.94-.9 1.13c-.17.2-.34.22-.63.07a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.66-2.06c-.17-.3 0-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.2 0-.5.07-.77.37-.26.3-1 .98-1 2.4s1.03 2.78 1.17 2.98c.15.2 2.03 3.1 4.9 4.35.69.3 1.22.47 1.64.6.69.22 1.32.19 1.81.11.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.55-.34z"/></svg> Falar no WhatsApp</a>
+      </div>
+      <ul class="hero-confianca">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.4"/><path d="M8 3v4M16 3v4M3 10.2h18"/></svg><span>Desde 1999, em Mogi das Cruzes-SP</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6"/><path d="M12 3a14.5 14.5 0 0 1 0 18 14.5 14.5 0 0 1 0-18z"/></svg><span>Atendimento em todo o Brasil</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l7.6 3v5.9c0 4.9-3.2 8.6-7.6 10.1-4.4-1.5-7.6-5.2-7.6-10.1V5.5z"/><path d="M9 12l2.1 2.1L15.4 9.9"/></svg><span>Laudos com validade jurídica</span></li>
+      </ul>
+    </div>
+    <div class="hero-midia">
+<!-- FOTO — Pexels, licença de uso comercial livre.
+     Procedência em assets/fotos/CREDITOS.md.
+     Tratamento (dessatura + verde) vem do CSS .foto-tratada.
+     Para voltar ao vetor: apague o .jpg e rode build.py. -->
+<figure class="foto-tratada hero-arte">
+  <img src="assets/fotos/hero.jpg" alt="Profissionais de uniforme e capacete em uma planta industrial atendida pela Ágape" loading="lazy" decoding="async">
+</figure>
+
+      <div class="hero-cartao-flutuante">
+        <span class="numero">+300</span>
+        <p>empresas atendidas e cerca de 20 mil vidas sob o nosso cuidado</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 4: PROVA SOCIAL — seção 5.3: vem logo abaixo do hero, com destaque.
+     Números confirmados + a carteira real de clientes em carrossel. -->
+<section class="secao secao--alt">
+  <div class="container">
+    <div class="secao-cabecalho secao-cabecalho--centro">
+      <span class="olho">Quem confia na Ágape</span>
+      <h2>Um quarto de século resolvendo SST para empresas brasileiras</h2>
+      <p class="lead">Desde 1999 traduzimos obrigação legal em rotina possível —
+      com laudo que se sustenta e prazo que se cumpre.</p>
+    </div>
+
+    <!-- NÚMEROS DE OPERAÇÃO — todos CONFIRMADOS pelo cliente: 25 anos,
+         +300 empresas, +600 CNPJs e ~20 mil vidas. Sem placeholder aqui. -->
+    <div class="numeros">
+      <div class="numero-item">
+        <span class="valor" data-conta="25" data-prefixo="" data-sufixo="">25</span>
+        <span class="rotulo">anos de atuação, desde 1999</span>
+      </div>
+      <div class="numero-item">
+        <span class="valor" data-conta="300" data-prefixo="+" data-sufixo="">+300</span>
+        <span class="rotulo">empresas atendidas</span>
+      </div>
+      <div class="numero-item">
+        <span class="valor" data-conta="600" data-prefixo="+" data-sufixo="">+600</span>
+        <span class="rotulo">CNPJs atendidos</span>
+      </div>
+      <div class="numero-item">
+        <span class="valor" data-conta="20" data-prefixo="~" data-sufixo=" mil">~20 mil</span>
+        <span class="rotulo">vidas sob nosso cuidado</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-2xl">
+    <p class="faixa-logos-titulo">Algumas das 99 empresas atendidas pela Ágape</p>
+
+  <!-- CARROSSEL DE CLIENTES — 99 empresas da carteira real da Ágape.
+       Animação puramente decorativa: com prefers-reduced-motion o laço para
+       e as faixas ficam estáticas, sem perder conteúdo. -->
+  <div class="carrossel-logos" role="group" aria-label="Empresas atendidas pela Ágape">
+    <div class="marquee marquee--esq">
+      <ul class="marquee-grupo">
+        <li><img src="assets/logos/9.png" alt="Elgin" loading="lazy" decoding="async" width="429" height="180"></li>
+        <li><img src="assets/logos/10.png" alt="FAME" loading="lazy" decoding="async" width="634" height="180"></li>
+        <li><img src="assets/logos/11.png" alt="Rinnai" loading="lazy" decoding="async" width="669" height="180"></li>
+        <li><img src="assets/logos/21.png" alt="Metalúrgica JAM" loading="lazy" decoding="async" width="239" height="180"></li>
+        <li><img src="assets/logos/22.png" alt="EDDF Indústria e Comércio" loading="lazy" decoding="async" width="228" height="180"></li>
+        <li><img src="assets/logos/23.png" alt="Cobral" loading="lazy" decoding="async" width="242" height="180"></li>
+        <li><img src="assets/logos/25.png" alt="SBR Brasil" loading="lazy" decoding="async" width="329" height="180"></li>
+        <li><img src="assets/logos/26.png" alt="Refrio Elgin" loading="lazy" decoding="async" width="315" height="180"></li>
+        <li><img src="assets/logos/27.png" alt="Quali Bags" loading="lazy" decoding="async" width="283" height="180"></li>
+        <li><img src="assets/logos/28.png" alt="Savasa" loading="lazy" decoding="async" width="791" height="180"></li>
+        <li><img src="assets/logos/29.png" alt="Reciclatec" loading="lazy" decoding="async" width="710" height="180"></li>
+        <li><img src="assets/logos/30.png" alt="Rottotanques" loading="lazy" decoding="async" width="1307" height="180"></li>
+        <li><img src="assets/logos/44.png" alt="Índice Malhas" loading="lazy" decoding="async" width="383" height="180"></li>
+        <li><img src="assets/logos/45.png" alt="Mogiaço" loading="lazy" decoding="async" width="243" height="180"></li>
+        <li><img src="assets/logos/46.png" alt="Mogi Telhas" loading="lazy" decoding="async" width="293" height="180"></li>
+        <li><img src="assets/logos/47.png" alt="Mogi Lumi" loading="lazy" decoding="async" width="239" height="180"></li>
+        <li><img src="assets/logos/12.png" alt="Rede Duque" loading="lazy" decoding="async" width="255" height="180"></li>
+        <li><img src="assets/logos/13.png" alt="Posto's Vale+" loading="lazy" decoding="async" width="506" height="180"></li>
+        <li><img src="assets/logos/14.png" alt="Rede 28" loading="lazy" decoding="async" width="193" height="180"></li>
+        <li><img src="assets/logos/15.png" alt="Postos Volt" loading="lazy" decoding="async" width="612" height="180"></li>
+        <li><img src="assets/logos/16.png" alt="Tigre do Vale" loading="lazy" decoding="async" width="180" height="180"></li>
+        <li><img src="assets/logos/17.png" alt="Rede Totality" loading="lazy" decoding="async" width="403" height="180"></li>
+        <li><img src="assets/logos/18.png" alt="Postos Quality" loading="lazy" decoding="async" width="133" height="180"></li>
+        <li><img src="assets/logos/19.png" alt="Auto Posto Liberty" loading="lazy" decoding="async" width="813" height="180"></li>
+        <li><img src="assets/logos/20.png" alt="Auto Posto Vipam" loading="lazy" decoding="async" width="631" height="180"></li>
+        <li><img src="assets/logos/63.png" alt="Distribuidora de Bebidas Gouveia" loading="lazy" decoding="async" width="182" height="180"></li>
+        <li><img src="assets/logos/24.png" alt="Gabco" loading="lazy" decoding="async" width="415" height="180"></li>
+        <li><img src="assets/logos/31.png" alt="MSI Engenharia" loading="lazy" decoding="async" width="133" height="180"></li>
+        <li><img src="assets/logos/32.png" alt="Adhkon Construtora" loading="lazy" decoding="async" width="657" height="180"></li>
+        <li><img src="assets/logos/33.png" alt="Grupo Jatobá Madeiras" loading="lazy" decoding="async" width="381" height="180"></li>
+        <li><img src="assets/logos/34.png" alt="Oceannia" loading="lazy" decoding="async" width="699" height="180"></li>
+        <li><img src="assets/logos/42.png" alt="Fixar Soluções" loading="lazy" decoding="async" width="229" height="180"></li>
+        <li><img src="assets/logos/105.png" alt="Arrumando a Casa" loading="lazy" decoding="async" width="154" height="180"></li>
+      </ul>
+      <ul class="marquee-grupo" aria-hidden="true">
+        <li aria-hidden="true"><img src="assets/logos/9.png" alt="Elgin" loading="lazy" decoding="async" width="429" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/10.png" alt="FAME" loading="lazy" decoding="async" width="634" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/11.png" alt="Rinnai" loading="lazy" decoding="async" width="669" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/21.png" alt="Metalúrgica JAM" loading="lazy" decoding="async" width="239" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/22.png" alt="EDDF Indústria e Comércio" loading="lazy" decoding="async" width="228" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/23.png" alt="Cobral" loading="lazy" decoding="async" width="242" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/25.png" alt="SBR Brasil" loading="lazy" decoding="async" width="329" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/26.png" alt="Refrio Elgin" loading="lazy" decoding="async" width="315" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/27.png" alt="Quali Bags" loading="lazy" decoding="async" width="283" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/28.png" alt="Savasa" loading="lazy" decoding="async" width="791" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/29.png" alt="Reciclatec" loading="lazy" decoding="async" width="710" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/30.png" alt="Rottotanques" loading="lazy" decoding="async" width="1307" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/44.png" alt="Índice Malhas" loading="lazy" decoding="async" width="383" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/45.png" alt="Mogiaço" loading="lazy" decoding="async" width="243" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/46.png" alt="Mogi Telhas" loading="lazy" decoding="async" width="293" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/47.png" alt="Mogi Lumi" loading="lazy" decoding="async" width="239" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/12.png" alt="Rede Duque" loading="lazy" decoding="async" width="255" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/13.png" alt="Posto's Vale+" loading="lazy" decoding="async" width="506" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/14.png" alt="Rede 28" loading="lazy" decoding="async" width="193" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/15.png" alt="Postos Volt" loading="lazy" decoding="async" width="612" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/16.png" alt="Tigre do Vale" loading="lazy" decoding="async" width="180" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/17.png" alt="Rede Totality" loading="lazy" decoding="async" width="403" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/18.png" alt="Postos Quality" loading="lazy" decoding="async" width="133" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/19.png" alt="Auto Posto Liberty" loading="lazy" decoding="async" width="813" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/20.png" alt="Auto Posto Vipam" loading="lazy" decoding="async" width="631" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/63.png" alt="Distribuidora de Bebidas Gouveia" loading="lazy" decoding="async" width="182" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/24.png" alt="Gabco" loading="lazy" decoding="async" width="415" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/31.png" alt="MSI Engenharia" loading="lazy" decoding="async" width="133" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/32.png" alt="Adhkon Construtora" loading="lazy" decoding="async" width="657" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/33.png" alt="Grupo Jatobá Madeiras" loading="lazy" decoding="async" width="381" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/34.png" alt="Oceannia" loading="lazy" decoding="async" width="699" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/42.png" alt="Fixar Soluções" loading="lazy" decoding="async" width="229" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/105.png" alt="Arrumando a Casa" loading="lazy" decoding="async" width="154" height="180"></li>
+      </ul>
+    </div>
+    <div class="marquee marquee--dir">
+      <ul class="marquee-grupo">
+        <li><img src="assets/logos/35.png" alt="Grupo Dimensão" loading="lazy" decoding="async" width="257" height="180"></li>
+        <li><img src="assets/logos/36.png" alt="MC Segurança" loading="lazy" decoding="async" width="177" height="180"></li>
+        <li><img src="assets/logos/37.png" alt="Grupo Líder" loading="lazy" decoding="async" width="144" height="180"></li>
+        <li><img src="assets/logos/38.png" alt="Zelo Segurança" loading="lazy" decoding="async" width="147" height="180"></li>
+        <li><img src="assets/logos/39.png" alt="Prisma" loading="lazy" decoding="async" width="159" height="180"></li>
+        <li><img src="assets/logos/40.png" alt="FRX" loading="lazy" decoding="async" width="382" height="180"></li>
+        <li><img src="assets/logos/41.png" alt="Grupo Alliança" loading="lazy" decoding="async" width="419" height="180"></li>
+        <li><img src="assets/logos/43.png" alt="Assibraff" loading="lazy" decoding="async" width="593" height="180"></li>
+        <li><img src="assets/logos/53.png" alt="Oliveira Uniformes" loading="lazy" decoding="async" width="148" height="180"></li>
+        <li><img src="assets/logos/54.png" alt="Supermercados Alabarce" loading="lazy" decoding="async" width="570" height="180"></li>
+        <li><img src="assets/logos/55.png" alt="Da Praça Supermercados" loading="lazy" decoding="async" width="141" height="180"></li>
+        <li><img src="assets/logos/56.png" alt="Jolie Padaria" loading="lazy" decoding="async" width="172" height="180"></li>
+        <li><img src="assets/logos/57.png" alt="Tita Padaria" loading="lazy" decoding="async" width="210" height="180"></li>
+        <li><img src="assets/logos/58.png" alt="Jafet Padaria" loading="lazy" decoding="async" width="299" height="180"></li>
+        <li><img src="assets/logos/59.png" alt="Padoca da Beth" loading="lazy" decoding="async" width="362" height="180"></li>
+        <li><img src="assets/logos/60.png" alt="Urakami Cogumelos" loading="lazy" decoding="async" width="148" height="180"></li>
+        <li><img src="assets/logos/61.png" alt="Sítio Hiromi" loading="lazy" decoding="async" width="321" height="180"></li>
+        <li><img src="assets/logos/62.png" alt="Due Grani" loading="lazy" decoding="async" width="180" height="180"></li>
+        <li><img src="assets/logos/64.png" alt="Kaishi Sushi" loading="lazy" decoding="async" width="297" height="180"></li>
+        <li><img src="assets/logos/65.png" alt="Hioki Sushi" loading="lazy" decoding="async" width="253" height="180"></li>
+        <li><img src="assets/logos/66.png" alt="Reiwa Sushi" loading="lazy" decoding="async" width="301" height="180"></li>
+        <li><img src="assets/logos/67.png" alt="Bistecão Casa de Carnes" loading="lazy" decoding="async" width="210" height="180"></li>
+        <li><img src="assets/logos/68.png" alt="Mega Boi Carnes" loading="lazy" decoding="async" width="784" height="180"></li>
+        <li><img src="assets/logos/69.png" alt="Costelão Paulista" loading="lazy" decoding="async" width="170" height="180"></li>
+        <li><img src="assets/logos/70.png" alt="Jolie Grill" loading="lazy" decoding="async" width="165" height="180"></li>
+        <li><img src="assets/logos/71.png" alt="Tita Petit" loading="lazy" decoding="async" width="206" height="180"></li>
+        <li><img src="assets/logos/72.png" alt="Predileto Restaurante" loading="lazy" decoding="async" width="493" height="180"></li>
+        <li><img src="assets/logos/73.png" alt="Bar do Alemão" loading="lazy" decoding="async" width="337" height="180"></li>
+        <li><img src="assets/logos/74.png" alt="Grupo Faberge" loading="lazy" decoding="async" width="544" height="180"></li>
+        <li><img src="assets/logos/75.png" alt="Pontal Autos" loading="lazy" decoding="async" width="223" height="180"></li>
+        <li><img src="assets/logos/76.png" alt="MD Express" loading="lazy" decoding="async" width="289" height="180"></li>
+        <li><img src="assets/logos/77.png" alt="StartLog" loading="lazy" decoding="async" width="970" height="180"></li>
+        <li><img src="assets/logos/78.png" alt="OK Brazil" loading="lazy" decoding="async" width="226" height="180"></li>
+      </ul>
+      <ul class="marquee-grupo" aria-hidden="true">
+        <li aria-hidden="true"><img src="assets/logos/35.png" alt="Grupo Dimensão" loading="lazy" decoding="async" width="257" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/36.png" alt="MC Segurança" loading="lazy" decoding="async" width="177" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/37.png" alt="Grupo Líder" loading="lazy" decoding="async" width="144" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/38.png" alt="Zelo Segurança" loading="lazy" decoding="async" width="147" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/39.png" alt="Prisma" loading="lazy" decoding="async" width="159" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/40.png" alt="FRX" loading="lazy" decoding="async" width="382" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/41.png" alt="Grupo Alliança" loading="lazy" decoding="async" width="419" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/43.png" alt="Assibraff" loading="lazy" decoding="async" width="593" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/53.png" alt="Oliveira Uniformes" loading="lazy" decoding="async" width="148" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/54.png" alt="Supermercados Alabarce" loading="lazy" decoding="async" width="570" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/55.png" alt="Da Praça Supermercados" loading="lazy" decoding="async" width="141" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/56.png" alt="Jolie Padaria" loading="lazy" decoding="async" width="172" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/57.png" alt="Tita Padaria" loading="lazy" decoding="async" width="210" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/58.png" alt="Jafet Padaria" loading="lazy" decoding="async" width="299" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/59.png" alt="Padoca da Beth" loading="lazy" decoding="async" width="362" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/60.png" alt="Urakami Cogumelos" loading="lazy" decoding="async" width="148" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/61.png" alt="Sítio Hiromi" loading="lazy" decoding="async" width="321" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/62.png" alt="Due Grani" loading="lazy" decoding="async" width="180" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/64.png" alt="Kaishi Sushi" loading="lazy" decoding="async" width="297" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/65.png" alt="Hioki Sushi" loading="lazy" decoding="async" width="253" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/66.png" alt="Reiwa Sushi" loading="lazy" decoding="async" width="301" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/67.png" alt="Bistecão Casa de Carnes" loading="lazy" decoding="async" width="210" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/68.png" alt="Mega Boi Carnes" loading="lazy" decoding="async" width="784" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/69.png" alt="Costelão Paulista" loading="lazy" decoding="async" width="170" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/70.png" alt="Jolie Grill" loading="lazy" decoding="async" width="165" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/71.png" alt="Tita Petit" loading="lazy" decoding="async" width="206" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/72.png" alt="Predileto Restaurante" loading="lazy" decoding="async" width="493" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/73.png" alt="Bar do Alemão" loading="lazy" decoding="async" width="337" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/74.png" alt="Grupo Faberge" loading="lazy" decoding="async" width="544" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/75.png" alt="Pontal Autos" loading="lazy" decoding="async" width="223" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/76.png" alt="MD Express" loading="lazy" decoding="async" width="289" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/77.png" alt="StartLog" loading="lazy" decoding="async" width="970" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/78.png" alt="OK Brazil" loading="lazy" decoding="async" width="226" height="180"></li>
+      </ul>
+    </div>
+    <div class="marquee marquee--esq">
+      <ul class="marquee-grupo">
+        <li><img src="assets/logos/79.png" alt="Suzuki Faberge Motos" loading="lazy" decoding="async" width="202" height="180"></li>
+        <li><img src="assets/logos/80.png" alt="Vipol Transportes" loading="lazy" decoding="async" width="559" height="180"></li>
+        <li><img src="assets/logos/84.png" alt="Saint Nicholas Medical" loading="lazy" decoding="async" width="722" height="180"></li>
+        <li><img src="assets/logos/85.png" alt="Cliente Ágape" loading="lazy" decoding="async" width="264" height="180"></li>
+        <li><img src="assets/logos/86.png" alt="Saint Nicholas Odontologia" loading="lazy" decoding="async" width="220" height="180"></li>
+        <li><img src="assets/logos/87.png" alt="MedQuest" loading="lazy" decoding="async" width="278" height="180"></li>
+        <li><img src="assets/logos/88.png" alt="Instituto Saint Nicholas Care" loading="lazy" decoding="async" width="211" height="180"></li>
+        <li><img src="assets/logos/89.png" alt="Clínica São Vito" loading="lazy" decoding="async" width="703" height="180"></li>
+        <li><img src="assets/logos/90.png" alt="Suzanclin" loading="lazy" decoding="async" width="309" height="180"></li>
+        <li><img src="assets/logos/91.png" alt="Totall Check-up" loading="lazy" decoding="async" width="175" height="180"></li>
+        <li><img src="assets/logos/92.png" alt="Lombardi Pupo Diagnósticos" loading="lazy" decoding="async" width="420" height="180"></li>
+        <li><img src="assets/logos/93.png" alt="Cardioclin Mogi" loading="lazy" decoding="async" width="493" height="180"></li>
+        <li><img src="assets/logos/94.png" alt="São Francisco" loading="lazy" decoding="async" width="283" height="180"></li>
+        <li><img src="assets/logos/95.png" alt="Casalab" loading="lazy" decoding="async" width="456" height="180"></li>
+        <li><img src="assets/logos/96.png" alt="Tamara Sandoval" loading="lazy" decoding="async" width="216" height="180"></li>
+        <li><img src="assets/logos/97.png" alt="Brasimed" loading="lazy" decoding="async" width="232" height="180"></li>
+        <li><img src="assets/logos/48.png" alt="EletroBidu" loading="lazy" decoding="async" width="727" height="180"></li>
+        <li><img src="assets/logos/49.png" alt="TeraCorp" loading="lazy" decoding="async" width="886" height="180"></li>
+        <li><img src="assets/logos/50.png" alt="Mogi Fibra" loading="lazy" decoding="async" width="500" height="180"></li>
+        <li><img src="assets/logos/52.png" alt="UPIX" loading="lazy" decoding="async" width="757" height="180"></li>
+        <li><img src="assets/logos/81.png" alt="Galeão Corretora de Seguros" loading="lazy" decoding="async" width="707" height="180"></li>
+        <li><img src="assets/logos/82.png" alt="Sponda Seguros" loading="lazy" decoding="async" width="209" height="180"></li>
+        <li><img src="assets/logos/83.png" alt="Jukar" loading="lazy" decoding="async" width="449" height="180"></li>
+        <li><img src="assets/logos/98.png" alt="Óculos Mania" loading="lazy" decoding="async" width="381" height="180"></li>
+        <li><img src="assets/logos/99.png" alt="GoldenMix Ótica" loading="lazy" decoding="async" width="759" height="180"></li>
+        <li><img src="assets/logos/100.png" alt="Ótica Indaiá" loading="lazy" decoding="async" width="467" height="180"></li>
+        <li><img src="assets/logos/51.png" alt="Microcamp" loading="lazy" decoding="async" width="308" height="180"></li>
+        <li><img src="assets/logos/101.png" alt="Clube de Campo de Mogi das Cruzes" loading="lazy" decoding="async" width="262" height="180"></li>
+        <li><img src="assets/logos/102.png" alt="Objetivo Mogi das Cruzes" loading="lazy" decoding="async" width="746" height="180"></li>
+        <li><img src="assets/logos/103.png" alt="Colégio Millenium Construtivo" loading="lazy" decoding="async" width="471" height="180"></li>
+        <li><img src="assets/logos/104.png" alt="Colégio Cristão Leão de Judá" loading="lazy" decoding="async" width="176" height="180"></li>
+        <li><img src="assets/logos/106.png" alt="Cáritas Diocesana de Mogi das Cruzes" loading="lazy" decoding="async" width="320" height="180"></li>
+        <li><img src="assets/logos/107.png" alt="Suzano Vôlei" loading="lazy" decoding="async" width="149" height="180"></li>
+      </ul>
+      <ul class="marquee-grupo" aria-hidden="true">
+        <li aria-hidden="true"><img src="assets/logos/79.png" alt="Suzuki Faberge Motos" loading="lazy" decoding="async" width="202" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/80.png" alt="Vipol Transportes" loading="lazy" decoding="async" width="559" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/84.png" alt="Saint Nicholas Medical" loading="lazy" decoding="async" width="722" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/85.png" alt="Cliente Ágape" loading="lazy" decoding="async" width="264" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/86.png" alt="Saint Nicholas Odontologia" loading="lazy" decoding="async" width="220" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/87.png" alt="MedQuest" loading="lazy" decoding="async" width="278" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/88.png" alt="Instituto Saint Nicholas Care" loading="lazy" decoding="async" width="211" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/89.png" alt="Clínica São Vito" loading="lazy" decoding="async" width="703" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/90.png" alt="Suzanclin" loading="lazy" decoding="async" width="309" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/91.png" alt="Totall Check-up" loading="lazy" decoding="async" width="175" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/92.png" alt="Lombardi Pupo Diagnósticos" loading="lazy" decoding="async" width="420" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/93.png" alt="Cardioclin Mogi" loading="lazy" decoding="async" width="493" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/94.png" alt="São Francisco" loading="lazy" decoding="async" width="283" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/95.png" alt="Casalab" loading="lazy" decoding="async" width="456" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/96.png" alt="Tamara Sandoval" loading="lazy" decoding="async" width="216" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/97.png" alt="Brasimed" loading="lazy" decoding="async" width="232" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/48.png" alt="EletroBidu" loading="lazy" decoding="async" width="727" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/49.png" alt="TeraCorp" loading="lazy" decoding="async" width="886" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/50.png" alt="Mogi Fibra" loading="lazy" decoding="async" width="500" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/52.png" alt="UPIX" loading="lazy" decoding="async" width="757" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/81.png" alt="Galeão Corretora de Seguros" loading="lazy" decoding="async" width="707" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/82.png" alt="Sponda Seguros" loading="lazy" decoding="async" width="209" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/83.png" alt="Jukar" loading="lazy" decoding="async" width="449" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/98.png" alt="Óculos Mania" loading="lazy" decoding="async" width="381" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/99.png" alt="GoldenMix Ótica" loading="lazy" decoding="async" width="759" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/100.png" alt="Ótica Indaiá" loading="lazy" decoding="async" width="467" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/51.png" alt="Microcamp" loading="lazy" decoding="async" width="308" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/101.png" alt="Clube de Campo de Mogi das Cruzes" loading="lazy" decoding="async" width="262" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/102.png" alt="Objetivo Mogi das Cruzes" loading="lazy" decoding="async" width="746" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/103.png" alt="Colégio Millenium Construtivo" loading="lazy" decoding="async" width="471" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/104.png" alt="Colégio Cristão Leão de Judá" loading="lazy" decoding="async" width="176" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/106.png" alt="Cáritas Diocesana de Mogi das Cruzes" loading="lazy" decoding="async" width="320" height="180"></li>
+        <li aria-hidden="true"><img src="assets/logos/107.png" alt="Suzano Vôlei" loading="lazy" decoding="async" width="149" height="180"></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+
+  <div class="container texto-centro mt-xl">
+    <a class="link-seta" href="servicos/index.html">Ver todos os serviços <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="container">
+    <div class="secao-cabecalho secao-cabecalho--centro">
+      <span class="olho">Nossos serviços</span>
+      <h2>Seis frentes, uma responsável só</h2>
+      <p class="lead">Cada serviço pode ser contratado separadamente — ou todos juntos, com um único interlocutor.</p>
+    </div>
+    <!-- GRADE DE SERVIÇOS — bloco repetível. Cada card leva à página do
+         serviço, onde o formulário já chega com o serviço pré-marcado
+         (roteamento por intenção, seção 5.1). -->
+    <div class="grade grade--3">
+      <article class="card card-servico">
+        <span class="icone-caixa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v5.6a4 4 0 0 0 8 0V3"/><path d="M4.2 3H6M12.2 3H14"/><path d="M10 12.6v2.1a5 5 0 0 0 10 0v-1.4"/><circle cx="20" cy="10.6" r="2.1"/></svg></span>
+        <h3>Medicina Ocupacional</h3>
+        <p>Exames admissionais, periódicos e demissionais, ASO e PCMSO conduzido por médico do trabalho responsável.</p>
+        <a class="link-seta" href="medicina-ocupacional-empresas/index.html">Ver o serviço <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card card-servico">
+        <span class="icone-caixa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.6 18v-2.1a8.4 8.4 0 0 1 16.8 0V18"/><rect x="2" y="18" width="20" height="3.1" rx="1.5"/><path d="M9 5V9.6M15 5V9.6"/><path d="M9 5a3 3 0 0 1 6 0"/></svg></span>
+        <h3>Segurança do Trabalho</h3>
+        <p>PGR, GRO, laudos técnicos e gestão de riscos elaborados por profissionais habilitados.</p>
+        <a class="link-seta" href="seguranca-trabalho-empresas/index.html">Ver o serviço <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card card-servico">
+        <span class="icone-caixa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2.2"/><path d="M8.4 21h7.2M12 17.2V21"/><path d="M8.8 10.6l2.1 2.1 4.3-4.3"/></svg></span>
+        <h3>eSocial SST</h3>
+        <p>Envio e monitoramento dos eventos S-2210, S-2220 e S-2240, com tratamento de pendências.</p>
+        <a class="link-seta" href="esocial-sst-empresas/index.html">Ver o serviço <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card card-servico">
+        <span class="icone-caixa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2L2.6 8 12 12.8 21.4 8z"/><path d="M6.2 10.2v4.4c0 1.7 2.6 3 5.8 3s5.8-1.3 5.8-3v-4.4"/><path d="M21.4 8v5.6"/></svg></span>
+        <h3>Treinamentos NR’s</h3>
+        <p>Treinamentos normativos com instrutor qualificado, certificado e controle de reciclagem.</p>
+        <a class="link-seta" href="treinamentos-nrs-empresas/index.html">Ver o serviço <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card card-servico">
+        <span class="icone-caixa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.2"/><path d="M12 8.4v5.2M9.4 11h5.2"/><path d="M4 21h16"/></svg></span>
+        <h3>Gestão de Ambulatório</h3>
+        <p>Equipe, protocolos e indicadores do ambulatório dentro da sua empresa, sob gestão da Ágape.</p>
+        <a class="link-seta" href="gestao-ambulatorio-empresas/index.html">Ver o serviço <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card card-servico">
+        <span class="icone-caixa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.6" r="2.2"/><circle cx="5" cy="19.2" r="2.2"/><circle cx="19" cy="19.2" r="2.2"/><circle cx="12" cy="12" r="1.9"/><path d="M12 6.8v3.3M10.6 13.4L6.4 17.4M13.4 13.4l4.2 4"/></svg></span>
+        <h3>Clínica Credenciada</h3>
+        <p>Rede credenciada para atender suas unidades em todo o Brasil, com padrão único de documentação.</p>
+        <a class="link-seta" href="clinica-credenciada/index.html">Ver o serviço <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 5: DIFERENCIAIS — os 4 da seção 1 do CLAUDE.md.
+     Duas colunas: arte à esquerda, os quatro diferenciais empilhados à
+     direita. No Elementor: container de 2 colunas com Icon Box dentro. -->
+<section class="secao secao--tinta">
+  <div class="container duas-colunas duas-colunas--midia">
+    <div class="midia-coluna">
+<!-- FOTO — Pexels, licença de uso comercial livre.
+     Procedência em assets/fotos/CREDITOS.md.
+     Tratamento (dessatura + verde) vem do CSS .foto-tratada.
+     Para voltar ao vetor: apague o .jpg e rode build.py. -->
+<figure class="foto-tratada">
+  <img src="assets/fotos/diferenciais.jpg" alt="Arte do bloco de diferenciais da Ágape, em losangos sobre verde profundo" loading="lazy" decoding="async">
+</figure>
+</div>
+    <div>
+      <span class="olho">Por que a Ágape</span>
+      <h2>Descomplicamos a Saúde e Segurança do Trabalho</h2>
+      <div class="lista-diferenciais mt-xl">
+      <div class="diferencial">
+        <span class="icone-caixa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.4"/><path d="M8 3v4M16 3v4M3 10.2h18"/></svg></span>
+        <div>
+          <h3>25 anos de experiência</h3>
+          <p>Sede fundada em 1999, em Mogi das Cruzes. Mais de 300 empresas e cerca de 20 mil vidas sob o nosso cuidado.</p>
+        </div>
+      </div>
+      <div class="diferencial">
+        <span class="icone-caixa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.8 20.5v-1.7a4 4 0 0 0-4-4H6.2a4 4 0 0 0-4 4v1.7"/><circle cx="9" cy="7.2" r="3.6"/><path d="M21.8 20.5v-1.7a4 4 0 0 0-3-3.87"/><path d="M16.2 3.8a4 4 0 0 1 0 6.9"/></svg></span>
+        <div>
+          <h3>Equipe multidisciplinar</h3>
+          <p>Medicina do trabalho, enfermagem, engenharia e segurança do trabalho na mesma casa.</p>
+        </div>
+      </div>
+      <div class="diferencial">
+        <span class="icone-caixa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.2 2.5L4.5 13.4h6.3l-1 8.1 8.7-10.9h-6.3z"/></svg></span>
+        <div>
+          <h3>Descomplicamos a SST</h3>
+          <p>Agilidade na resposta, orientação técnica contínua e desburocratização da relação entre a SST e o RH.</p>
+        </div>
+      </div>
+      <div class="diferencial">
+        <span class="icone-caixa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 1.9"/></svg></span>
+        <div>
+          <h3>Prazos e normas cumpridos</h3>
+          <p>Documentação entregue dentro do prazo legal e alinhada às Normas Regulamentadoras.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO EXTRA "Como funciona" — não estava na lista de 9 blocos do
+     CLAUDE.md. Grade simples, reproduzível no Elementor.
+     Se o cliente achar redundante, esta seção sai sem afetar o resto. -->
+<section class="secao">
+  <div class="container">
+    <div class="duas-colunas duas-colunas--midia mb-xl">
+      <div>
+        <span class="olho">Como funciona</span>
+        <h2>Do primeiro contato à rotina que roda sozinha</h2>
+        <p class="lead mt-md">Quatro etapas, sem surpresa no meio do caminho.
+        Você sabe o que vem antes de assinar.</p>
+      </div>
+      <div class="midia-coluna">
+<!-- FOTO — Pexels, licença de uso comercial livre.
+     Procedência em assets/fotos/CREDITOS.md.
+     Tratamento (dessatura + verde) vem do CSS .foto-tratada.
+     Para voltar ao vetor: apague o .jpg e rode build.py. -->
+<figure class="foto-tratada">
+  <img src="assets/fotos/processo.jpg" alt="Arte do bloco de processo da Ágape, em losangos sobre verde profundo" loading="lazy" decoding="async">
+</figure>
+</div>
+    </div>
+    <div class="grade grade--4">
+      <div class="passo">
+        <span class="indice">ETAPA 01</span>
+        <h3>Diagnóstico</h3>
+        <p>Levantamos o que a sua empresa já tem, o que está vencido e o que falta frente às obrigações legais.</p>
+      </div>
+      <div class="passo">
+        <span class="indice">ETAPA 02</span>
+        <h3>Proposta</h3>
+        <p>Escopo e investimento definidos por serviço, sem pacote fechado que cobra o que você não precisa.</p>
+      </div>
+      <div class="passo">
+        <span class="indice">ETAPA 03</span>
+        <h3>Implantação</h3>
+        <p>Documentos elaborados, exames agendados e eventos do eSocial regularizados, com cronograma acordado.</p>
+      </div>
+      <div class="passo">
+        <span class="indice">ETAPA 04</span>
+        <h3>Rotina</h3>
+        <p>Acompanhamento contínuo: vencimentos controlados, revisões nos prazos e um canal direto com a Ágape.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="secao secao--alt com-diagonal com-diagonal--para-escuro">
+  <div class="container container--estreito">
+    <div class="secao-cabecalho secao-cabecalho--centro">
+      <span class="olho">FAQ</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <!-- Accordion nativo com <details>. No Elementor: widget Accordion. -->
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>A Ágape atende empresas de qualquer porte e segmento?</summary>
+        <div class="faq-resposta"><p>Sim. Atendemos empresas de todos os segmentos que precisam cumprir obrigações de Saúde e Segurança do Trabalho, do escritório com poucos colaboradores à indústria com múltiplos turnos. O escopo é dimensionado conforme o grau de risco e o número de colaboradores.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Minha empresa fica fora de Mogi das Cruzes. Vocês atendem?</summary>
+        <div class="faq-resposta"><p>Sim. A Ágape atua em todo o Brasil, com atendimento na matriz, na empresa cliente ou por rede credenciada nas demais praças.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>O que a empresa precisa ter para estar em dia com a SST?</summary>
+        <div class="faq-resposta"><p>Em linhas gerais: PGR atualizado (NR-1), PCMSO com médico coordenador (NR-7), exames ocupacionais em dia, treinamentos das NRs aplicáveis e os eventos de SST enviados ao eSocial. O diagnóstico inicial da Ágape aponta exatamente o que falta na sua operação.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Vocês assumem uma empresa que já está com documentação vencida?</summary>
+        <div class="faq-resposta"><p>Sim. Levantamos o passivo, priorizamos o que gera risco imediato de autuação e montamos um plano de regularização antes de assumir a rotina.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Como funciona o orçamento?</summary>
+        <div class="faq-resposta"><p>Pelo formulário desta página. Retornamos com um escopo por serviço, sem compromisso. Também é possível falar direto pelo WhatsApp, mas o formulário garante que o time comercial receba os dados completos.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FECHO DA PÁGINA — formulário + CTA sob uma textura só, sem emenda. -->
+<div class="faixa-escura">
+
+<section class="secao secao--escura" id="orcamento">
+  <div class="container form-bloco-grade">
+    <div>
+      <span class="olho">Orçamento</span>
+      <h2>Vamos dimensionar o que a sua empresa precisa</h2>
+      <p class="lead mt-md">Conte o cenário da sua operação e devolvemos um escopo com o que é obrigatório, o que está vencido e o que pode esperar.</p>
+      <ul class="lista-check mt-xl">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Resposta do time comercial, não de robô</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Escopo por serviço — você contrata só o que precisa</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Diagnóstico inicial sem compromisso</span></li>
+      </ul>
+    </div>
+    
+<div class="form-cartao" id="orcamento">
+  <h3>Solicite um orçamento</h3>
+  <p class="form-sub">Retornamos com um escopo por serviço. Sem compromisso.</p>
+
+  <!-- Sem pré-marcação: formulário genérico -->
+  <form class="campos campos--2col" method="post" action="#" novalidate>
+    <div class="campo">
+      <label for="orcamento-nome">Nome <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input type="text" id="orcamento-nome" name="nome" placeholder="Seu nome" required>
+    </div>
+    <div class="campo">
+      <label for="orcamento-empresa">Empresa <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input type="text" id="orcamento-empresa" name="empresa" placeholder="Nome da empresa" required>
+    </div>
+    <div class="campo">
+      <label for="orcamento-telefone">Telefone <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input type="tel" id="orcamento-telefone" name="telefone" placeholder="(00) 00000-0000" required>
+    </div>
+    <div class="campo">
+      <label for="orcamento-email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input type="email" id="orcamento-email" name="email" placeholder="voce@empresa.com.br" required>
+    </div>
+    <div class="campo campo--largo">
+      <label for="orcamento-servico">Serviço de interesse</label>
+      <select id="orcamento-servico" name="servico">
+              <option value="">Selecione o serviço</option>
+              <option value="medicina">Medicina Ocupacional</option>
+              <option value="seguranca">Segurança do Trabalho</option>
+              <option value="esocial">eSocial SST</option>
+              <option value="treinamentos">Treinamentos NR’s</option>
+              <option value="ambulatorio">Gestão de Ambulatório</option>
+              <option value="clinica">Clínica Credenciada</option>
+              <option value="orientacao" selected>Ainda não sei — preciso de orientação</option>
+      </select>
+    </div>
+
+    <div class="campo campo--largo">
+      <label class="consentimento" for="orcamento-lgpd">
+        <input type="checkbox" id="orcamento-lgpd" name="lgpd" required>
+        <span>Autorizo a Ágape a usar meus dados para responder a esta
+        solicitação, conforme a <a href="politica-de-privacidade/index.html">Política de Privacidade</a>.</span>
+      </label>
+    </div>
+
+    <div class="campo campo--largo form-rodape">
+      <!-- type="button": no protótipo o formulário NÃO envia (seção 8). -->
+      <button type="button" class="btn btn--primario btn--bloco">Solicitar orçamento</button>
+      <p class="form-nota">Protótipo: o envio está desativado. No WordPress,
+      este formulário grava o lead e dispara notificação por e-mail.</p>
+    </div>
+  </form>
+
+  <p class="form-alternativa">
+    Prefere conversar agora? <a href="https://wa.me/5511934067014" target="_blank" rel="noopener">Chamar o
+    comercial no WhatsApp (11) 93406-7014</a>
+  </p>
+</div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container cta-final-inner">
+    <div>
+      <h2>Sua empresa está em dia com a SST?</h2>
+      <p>Em poucos minutos a gente identifica o que está vencido, o que falta e o que gera risco imediato de autuação.</p>
+    </div>
+    <div class="grupo-botoes">
+      <a class="btn btn--claro" href="contato/index.html#orcamento">Solicite um orçamento</a>
+      <a class="btn btn--fantasma-claro" href="https://wa.me/5511934067014" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22.5l5.6-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.1 8.1 0 1 1 12 20.1z"/><path d="M17 14.3c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.15-.64.15s-.74.94-.9 1.13c-.17.2-.34.22-.63.07a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.66-2.06c-.17-.3 0-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.2 0-.5.07-.77.37-.26.3-1 .98-1 2.4s1.03 2.78 1.17 2.98c.15.2 2.03 3.1 4.9 4.35.69.3 1.22.47 1.64.6.69.22 1.32.19 1.81.11.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.55-.34z"/></svg> WhatsApp (11) 93406-7014</a>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grade">
+
+      <div>
+        <!-- LOGOTIPO — PLACEHOLDER.
+     Reproduz a estrutura da assinatura oficial: símbolo de losangos
+     + wordmark "ágape" em caixa baixa + tagline. O símbolo aqui é uma
+     APROXIMAÇÃO: substituir pelo SVG vetorial oficial.
+     Regra do guia (item 02): versão preta sobre fundo claro, branca
+     sobre fundo escuro; não distorcer, inclinar nem aplicar efeitos. -->
+<a class="logo" href="index.html" aria-label="Ágape Saúde e Segurança do Trabalho — página inicial">
+  <span class="logo-marca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1.8L22.2 12 12 22.2 1.8 12z"/><path d="M12 1.8L17.1 6.9 12 12 6.9 6.9z"/><path d="M12 12l5.1 5.1L12 22.2 6.9 17.1z"/><path d="M8.4 12L12 8.4l3.6 3.6L12 15.6z"/></svg></span>
+  <span class="logo-texto">
+    <span class="logo-nome">ágape</span>
+    <span class="logo-sub">Saúde e Segurança do Trabalho</span>
+  </span>
+</a>
+        <p class="footer-sobre">Saúde e Segurança do Trabalho com excelência.
+        Atuação em todo o Brasil desde 1999.</p>
+        <div class="footer-redes">
+          <a href="https://www.facebook.com/agapepericias" target="_blank" rel="noopener" aria-label="Facebook da Ágape"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 22v-8.1h2.7l.42-3.15H13.4V8.73c0-.9.25-1.53 1.56-1.53h1.67V4.38A22 22 0 0 0 14.2 4.25c-2.4 0-4.05 1.47-4.05 4.17v2.33H7.42V13.9h2.73V22z"/></svg></a>
+          <a href="https://www.instagram.com/agape.sst/" target="_blank" rel="noopener" aria-label="Instagram da Ágape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.linkedin.com/company/%C3%A1gape-sa%C3%BAde-e-seguran%C3%A7a-do-trabalho/" target="_blank" rel="noopener" aria-label="LinkedIn da Ágape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3.4"/><path d="M7.6 10.4v6.5"/><circle cx="7.6" cy="7.4" r="1" fill="currentColor" stroke="none"/><path d="M11.5 16.9v-6.5"/><path d="M11.5 13.4c0-1.7 1.05-2.9 2.65-2.9s2.65 1.2 2.65 2.9v3.5"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="footer-titulo">Serviços</h2>
+        <ul class="footer-lista">
+        <li><a href="medicina-ocupacional-empresas/index.html">Medicina Ocupacional</a></li>
+        <li><a href="seguranca-trabalho-empresas/index.html">Segurança do Trabalho</a></li>
+        <li><a href="esocial-sst-empresas/index.html">eSocial SST</a></li>
+        <li><a href="treinamentos-nrs-empresas/index.html">Treinamentos NR’s</a></li>
+        <li><a href="gestao-ambulatorio-empresas/index.html">Gestão de Ambulatório</a></li>
+        <li><a href="clinica-credenciada/index.html">Clínica Credenciada</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer-titulo">Institucional</h2>
+        <ul class="footer-lista">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre-nos/index.html">Sobre Nós</a></li>
+          <li><a href="contato/index.html">Contato</a></li>
+          <li><a href="contato/index.html">Trabalhe conosco</a></li>
+          <li><a href="politica-de-privacidade/index.html">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer-titulo">Contato</h2>
+        <ul class="footer-contato">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.5c0 5.8-8 11.5-8 11.5s-8-5.7-8-11.5a8 8 0 1 1 16 0z"/><circle cx="12" cy="10.2" r="3"/></svg>
+            <span>
+              <span class="rotulo">Matriz</span>
+              Av. Pref. Carlos Ferreira Lopes, 703 – Vila Mogilar<br>Mogi das Cruzes – SP, 08773-490<br>Edifício Helbor Dual — Salas 1301, 1302 e 1303
+            </span>
+          </li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 16.9v2.7a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 3.8 2h2.7a2 2 0 0 1 2 1.7c.12 1 .35 1.9.67 2.8a2 2 0 0 1-.45 2.1L7.6 9.7a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.45c.9.32 1.84.55 2.8.67a2 2 0 0 1 1.9 2.05z"/></svg>
+            <span>
+              <span class="rotulo">Recepção · fixo</span>
+              <a href="tel:+551147263150">(11) 4726-3150</a>
+            </span>
+          </li>
+          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22.5l5.6-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.1 8.1 0 1 1 12 20.1z"/><path d="M17 14.3c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.15-.64.15s-.74.94-.9 1.13c-.17.2-.34.22-.63.07a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.66-2.06c-.17-.3 0-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.2 0-.5.07-.77.37-.26.3-1 .98-1 2.4s1.03 2.78 1.17 2.98c.15.2 2.03 3.1 4.9 4.35.69.3 1.22.47 1.64.6.69.22 1.32.19 1.81.11.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.55-.34z"/></svg>
+            <span>
+              <span class="rotulo">Recepção · WhatsApp</span>
+              <a href="https://wa.me/5511947919138" target="_blank" rel="noopener">(11) 94791-9138</a>
+            </span>
+          </li>
+          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22.5l5.6-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.1 8.1 0 1 1 12 20.1z"/><path d="M17 14.3c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.15-.64.15s-.74.94-.9 1.13c-.17.2-.34.22-.63.07a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.66-2.06c-.17-.3 0-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.2 0-.5.07-.77.37-.26.3-1 .98-1 2.4s1.03 2.78 1.17 2.98c.15.2 2.03 3.1 4.9 4.35.69.3 1.22.47 1.64.6.69.22 1.32.19 1.81.11.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.55-.34z"/></svg>
+            <span>
+              <span class="rotulo">Comercial · WhatsApp</span>
+              <a href="https://wa.me/5511934067014" target="_blank" rel="noopener">(11) 93406-7014</a>
+            </span>
+          </li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.4"/><path d="M3.2 6.6l8.8 5.9 8.8-5.9"/></svg>
+            <span>
+              <span class="rotulo">E-mail comercial</span>
+              <a href="mailto:mktecomercial@agapesaudeseguranca.com.br">mktecomercial@agapesaudeseguranca.com.br</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-base">
+      <p>© 2026 Ágape Saúde e Segurança do Trabalho. Todos os direitos reservados.</p>
+      <nav aria-label="Links do rodapé">
+        <a href="politica-de-privacidade/index.html">Política de Privacidade</a>
+      </nav>
+      <p><strong>PROTÓTIPO</strong> — versão para aprovação, não é o site publicado.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- BANNER LGPD (seção 2 e 5 do CLAUDE.md).
+     No protótipo é só visual: fecha via CSS, sem gravar nada — a regra 8
+     proíbe localStorage. No WordPress vira plugin de consentimento que
+     registra a escolha do visitante. -->
+<input type="checkbox" id="lgpd-ok" class="lgpd-check" aria-label="Fechar aviso de cookies">
+<div class="lgpd-banner" role="region" aria-label="Aviso de cookies">
+  <p>Usamos cookies para melhorar sua experiência e medir a audiência do site.
+  Ao continuar, você concorda com a nossa
+  <a href="politica-de-privacidade/index.html">Política de Privacidade</a>.</p>
+  <div class="lgpd-acoes">
+    <label class="btn btn--contorno btn--pequeno" for="lgpd-ok">Recusar</label>
+    <label class="btn btn--primario btn--pequeno" for="lgpd-ok">Aceitar</label>
+  </div>
+</div>
+
+<!-- Único script do protótipo: anima os números da seção "em operação".
+     É enfeite — o valor final já está no HTML, então sem JS nada se perde.
+     No Elementor: widget Contador (gratuito). -->
+<script src="assets/js/contadores.js" defer></script>
+
+</body>
+</html>

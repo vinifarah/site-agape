@@ -1,0 +1,1525 @@
+/* ==========================================================================
+   ÁGAPE SAÚDE E SEGURANÇA DO TRABALHO — PROTÓTIPO ESTÁTICO
+   HTML/CSS puro. Sem frameworks, sem JS de funcionalidade.
+
+   COMO LER ESTE ARQUIVO (para a fase WordPress/Elementor):
+   - O bloco 01 (TOKENS) vira "Estilos Globais" do Elementor (cores + fontes).
+     A correspondência é 1:1 — trocar o hex aqui é o mesmo que trocar lá.
+   - Cada bloco a partir do 06 corresponde a um "container/template" do
+     Elementor. Nada aqui depende de JS para existir.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   01. TOKENS — Estilos Globais
+   ========================================================================== */
+:root {
+
+  /* --- PALETA OFICIAL DA MARCA --------------------------------------------
+     Valores extraídos do guia "Identidade Visual — Referência para
+     interface web" enviado pelo cliente. NÃO alterar estes seis: são a
+     marca. Os tons derivados abaixo existem só para garantir contraste. */
+  --verde-profundo:       #112005;   /* base institucional escura */
+  --verde-institucional:  #46B148;
+  --verde-intermediario:  #80C447;
+  --verde-limao:          #AFD745;   /* ênfase, botão primário, destaques */
+  --branco:               #FFFFFF;
+  --cinza-claro:          #B0B8AA;
+
+  /* --- TONS DERIVADOS (acessibilidade) -------------------------------------
+     O verde institucional (#46B148) tem 2,7:1 sobre branco e o verde-limão
+     (#AFD745) tem 1,7:1 — nenhum dos dois serve como TEXTO sobre fundo
+     claro. Por isso todo texto/link verde sobre claro usa --cor-primaria,
+     um escurecimento do verde institucional que mantém o matiz e alcança
+     5,6:1 (aprova WCAG AA). A marca em si não muda: o verde-limão continua
+     sendo a cor de ênfase, aplicada sobre fundo escuro e nos botões (onde o
+     texto por cima é escuro, 10,2:1). */
+  --cor-primaria:         #2D762E;
+  --cor-primaria-hover:   #215A22;
+  --cor-primaria-suave:   #EFF6E3;
+  --cor-primaria-borda:   #D3E6AF;
+
+  --cor-secundaria:       #112005;   /* = verde profundo: seções escuras */
+  --cor-secundaria-clara: #1D3410;
+
+  --cor-acento:           #AFD745;   /* = verde-limão, sobre fundo escuro */
+
+  /* Alias mantido para compatibilidade com o resto do arquivo */
+  --verde-marca:          #46B148;
+
+  /* --- NEUTROS -------------------------------------------------------------
+     Puxados para o lado do verde profundo, para não brigar com a marca. */
+  --texto-forte:          #112005;
+  --texto:                #414B3C;
+  --texto-suave:          #66705F;
+  --fundo:                #FFFFFF;
+  --fundo-alt:            #F2F5EC;
+  --borda:                #E2E8D8;
+  --borda-forte:          #C9D2BC;
+
+  /* --- TIPOGRAFIA ---------------------------------------------------------
+     O guia não fixa família oficial: pede "sans-serif geométrica e limpa",
+     pesos fortes em títulos e poucas variações.
+     Poppins nos títulos porque é a geométrica do Google Fonts mais próxima
+     do logotipo (bojos circulares do "ágape"). Inter no texto corrido pela
+     leitura confortável em bloco. As duas existem no Google Fonts, que o
+     Elementor integra nativamente. */
+  --fonte-titulo: 'Poppins', 'Century Gothic', 'Segoe UI', system-ui, sans-serif;
+  --fonte-texto:  'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --t-h1:    clamp(2.05rem, 1.35rem + 2.6vw, 3.35rem);
+  --t-h2:    clamp(1.65rem, 1.25rem + 1.7vw, 2.4rem);
+  --t-h3:    clamp(1.15rem, 1.05rem + 0.45vw, 1.4rem);
+  --t-lead:  clamp(1.05rem, 1rem + 0.35vw, 1.19rem);
+  --t-base:  1rem;
+  --t-sm:    0.9375rem;
+  --t-xs:    0.8125rem;
+
+  --peso-normal: 400;
+  --peso-medio:  500;
+  --peso-semi:   600;
+  --peso-bold:   700;
+  --peso-extra:  800;
+
+  --altura-titulo: 1.15;
+  --altura-texto:  1.7;
+
+  /* --- ESPAÇAMENTO -------------------------------------------------------- */
+  --esp-xs:  0.5rem;
+  --esp-sm:  0.75rem;
+  --esp-md:  1rem;
+  --esp-lg:  1.5rem;
+  --esp-xl:  2rem;
+  --esp-2xl: 3rem;
+  --esp-3xl: 4rem;
+  --secao-y: clamp(3.25rem, 2.2rem + 3.2vw, 5.75rem);
+
+  /* --- LARGURAS ----------------------------------------------------------- */
+  --container:          1180px;
+  --container-estreito: 760px;
+  --gutter:             clamp(1.15rem, 0.7rem + 1.6vw, 2rem);
+
+  /* --- FORMA ---------------------------------------------------------------
+     "Cards simples, com cantos discretamente arredondados" (guia, item 04).
+     Daí o raio curto — nada de pílula, exceto em selos pequenos. */
+  --raio-sm:   6px;
+  --raio:      10px;
+  --raio-lg:   16px;
+  --raio-full: 999px;
+
+  --sombra-sm: 0 1px 2px rgba(17, 32, 5, .06), 0 2px 6px rgba(17, 32, 5, .05);
+  --sombra:    0 4px 10px rgba(17, 32, 5, .07), 0 12px 28px rgba(17, 32, 5, .08);
+  --sombra-lg: 0 10px 24px rgba(17, 32, 5, .10), 0 28px 60px rgba(17, 32, 5, .12);
+
+  --transicao: 180ms ease;
+
+  --altura-header: 76px;
+
+  /* --- TEXTURA DE LOSANGOS -------------------------------------------------
+     O guia (item 05) pede o símbolo ampliado, em baixa opacidade, como
+     textura de fundo. Aqui está resolvido em CSS puro, como malha de
+     losangos — é uma APROXIMAÇÃO geométrica da linguagem do símbolo, não o
+     símbolo. Quando o cliente enviar o SVG vetorial, trocar por ele
+     (no Elementor: imagem de fundo do container, com opacidade baixa). */
+  --textura-losango:
+    repeating-linear-gradient(45deg,  rgba(175, 215, 69, .05) 0 2px, transparent 2px 64px),
+    repeating-linear-gradient(-45deg, rgba(175, 215, 69, .05) 0 2px, transparent 2px 64px);
+}
+
+
+/* ==========================================================================
+   02. RESET
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li, figure, blockquote, dl, dd { margin: 0; padding: 0; }
+
+ul, ol { list-style: none; }
+
+img, svg, video { display: block; max-width: 100%; height: auto; }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+
+a { color: inherit; text-decoration: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+
+/* ==========================================================================
+   03. BASE / TIPOGRAFIA
+   ========================================================================== */
+body {
+  font-family: var(--fonte-texto);
+  font-size: var(--t-base);
+  font-weight: var(--peso-normal);
+  line-height: var(--altura-texto);
+  color: var(--texto);
+  background: var(--fundo);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  color: var(--texto-forte);
+  line-height: var(--altura-titulo);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--t-h1); font-weight: var(--peso-extra); }
+h2 { font-size: var(--t-h2); font-weight: var(--peso-bold); }
+h3 { font-size: var(--t-h3); font-weight: var(--peso-bold); }
+h4 { font-size: 1.05rem;     font-weight: var(--peso-semi); }
+
+p { text-wrap: pretty; }
+p + p { margin-top: var(--esp-md); }
+
+strong { font-weight: var(--peso-semi); color: var(--texto-forte); }
+
+.lead { font-size: var(--t-lead); line-height: 1.65; color: var(--texto); }
+
+/* Foco visível em tudo que é interativo — acessibilidade */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--verde-marca);
+  outline-offset: 2px;
+  border-radius: var(--raio-sm);
+}
+
+.pular-para-conteudo {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 999;
+  background: var(--cor-primaria);
+  color: var(--branco);
+  padding: var(--esp-sm) var(--esp-md);
+  border-radius: 0 0 var(--raio-sm) 0;
+}
+.pular-para-conteudo:focus { left: 0; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+
+/* ==========================================================================
+   04. LAYOUT — cada .secao é um Container do Elementor
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.container--estreito { max-width: var(--container-estreito); }
+
+.secao { padding-block: var(--secao-y); }
+.secao--compacta { padding-block: clamp(2.25rem, 1.6rem + 2vw, 3.5rem); }
+.secao--alt    { background: var(--fundo-alt); }
+.secao--tinta  { background: var(--cor-primaria-suave); }
+.secao--escura {
+  position: relative;
+  background:
+    var(--textura-losango),
+    radial-gradient(720px 380px at 8% 8%, rgba(70, 177, 72, .16), transparent 62%),
+    var(--verde-profundo);
+  color: rgba(255, 255, 255, .80);
+}
+.secao--escura h1,
+.secao--escura h2,
+.secao--escura h3,
+.secao--escura h4 { color: var(--branco); }
+.secao--escura .lead { color: rgba(255, 255, 255, .82); }
+
+.secao-cabecalho { max-width: 720px; margin-bottom: var(--esp-2xl); }
+.secao-cabecalho--centro { margin-inline: auto; text-align: center; }
+.secao-cabecalho h2 { margin-bottom: var(--esp-md); }
+
+.olho {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-xs);
+  font-weight: var(--peso-bold);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cor-primaria);
+  margin-bottom: var(--esp-sm);
+}
+.olho::before {
+  content: "";
+  width: 22px; height: 2px;
+  background: var(--verde-marca);
+  border-radius: 2px;
+}
+.secao--escura .olho { color: var(--cor-acento); }
+.secao--escura .olho::before { background: var(--cor-acento); }
+.secao-cabecalho--centro .olho { justify-content: center; }
+
+/* Grades — nada exótico: 2, 3 ou 4 colunas simples */
+.grade { display: grid; gap: var(--esp-lg); }
+.grade--2 { grid-template-columns: repeat(2, 1fr); }
+.grade--3 { grid-template-columns: repeat(3, 1fr); }
+.grade--4 { grid-template-columns: repeat(4, 1fr); }
+
+.duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 1rem + 4vw, 4rem);
+  align-items: center;
+}
+
+
+/* ==========================================================================
+   05. BOTÕES E ETIQUETAS
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-sm);
+  font-weight: var(--peso-bold);
+  line-height: 1;
+  padding: .95rem 1.6rem;
+  border: 2px solid transparent;
+  border-radius: var(--raio);
+  cursor: pointer;
+  text-align: center;
+  transition: background var(--transicao), color var(--transicao),
+              border-color var(--transicao), transform var(--transicao),
+              box-shadow var(--transicao);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+/* Botão primário: verde-limão com texto escuro (guia, item 06).
+   #112005 sobre #AFD745 = 10,2:1. A borda em verde intermediário dá
+   contorno ao botão quando ele cai sobre fundo claro. */
+.btn--primario {
+  background: var(--verde-limao);
+  border-color: var(--verde-intermediario);
+  color: var(--verde-profundo);
+  box-shadow: 0 6px 16px rgba(17, 32, 5, .18);
+}
+.btn--primario:hover {
+  background: var(--verde-intermediario);
+  border-color: var(--verde-intermediario);
+  color: var(--verde-profundo);
+}
+
+/* Botão secundário: contorno claro ou verde (guia, item 06) */
+.btn--contorno {
+  background: transparent;
+  border-color: var(--borda-forte);
+  color: var(--texto-forte);
+}
+.btn--contorno:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+  background: var(--cor-primaria-suave);
+}
+
+.btn--claro {
+  background: var(--branco);
+  border-color: var(--branco);
+  color: var(--verde-profundo);
+}
+.btn--claro:hover { background: var(--fundo-alt); border-color: var(--fundo-alt); }
+
+.btn--fantasma-claro {
+  background: transparent;
+  border-color: rgba(255, 255, 255, .38);
+  color: var(--branco);
+}
+.btn--fantasma-claro:hover {
+  border-color: var(--branco);
+  background: rgba(255, 255, 255, .1);
+}
+
+.btn--pequeno { padding: .7rem 1.15rem; font-size: var(--t-xs); }
+.btn--bloco   { width: 100%; }
+
+/* WhatsApp = via SECUNDÁRIA em todo o site (nunca a única) */
+.btn--whatsapp {
+  background: transparent;
+  border-color: var(--borda-forte);
+  color: var(--texto-forte);
+}
+.btn--whatsapp:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+  background: var(--cor-primaria-suave);
+}
+.btn--whatsapp svg { color: var(--cor-primaria); }
+/* Sobre fundo escuro o WhatsApp vira contorno claro */
+.secao--escura .btn--whatsapp,
+.hero .btn--whatsapp,
+.pagina-topo .btn--whatsapp {
+  border-color: rgba(255, 255, 255, .34);
+  color: var(--branco);
+}
+.secao--escura .btn--whatsapp svg,
+.hero .btn--whatsapp svg,
+.pagina-topo .btn--whatsapp svg { color: var(--verde-limao); }
+.secao--escura .btn--whatsapp:hover,
+.hero .btn--whatsapp:hover,
+.pagina-topo .btn--whatsapp:hover {
+  border-color: var(--verde-limao);
+  color: var(--branco);
+  background: rgba(175, 215, 69, .12);
+}
+
+.grupo-botoes { display: flex; flex-wrap: wrap; gap: var(--esp-sm); align-items: center; }
+
+.link-seta {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-sm);
+  font-weight: var(--peso-bold);
+  color: var(--cor-primaria);
+}
+.link-seta svg { width: 16px; height: 16px; transition: transform var(--transicao); }
+.link-seta:hover svg { transform: translateX(4px); }
+
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  background: var(--branco);
+  border: 1px solid var(--cor-primaria-borda);
+  color: var(--cor-primaria);
+  font-size: var(--t-xs);
+  font-weight: var(--peso-semi);
+  padding: .4rem .85rem;
+  border-radius: var(--raio);
+}
+
+/* Marcação de conteúdo que ainda depende do cliente */
+.placeholder-tag {
+  display: inline-block;
+  font-family: var(--fonte-titulo);
+  font-size: 0.6875rem;
+  font-weight: var(--peso-bold);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #8A6A18;
+  background: #FDF3DF;
+  border: 1px dashed #E3C271;
+  border-radius: var(--raio-sm);
+  padding: .2rem .5rem;
+}
+
+
+/* ==========================================================================
+   06. HEADER — bloco global
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, .96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-lg);
+  min-height: var(--altura-header);
+  position: relative;
+}
+
+/* Logo — PLACEHOLDER. Substituir pelo SVG vetorial do cliente. */
+.logo { display: inline-flex; align-items: center; gap: .65rem; flex: none; }
+.logo-marca { width: 38px; height: 38px; flex: none; color: var(--verde-marca); }
+.logo-texto { display: flex; flex-direction: column; line-height: 1.05; }
+.logo-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  font-weight: var(--peso-extra);
+  letter-spacing: -0.02em;
+  color: var(--cor-secundaria);
+}
+.logo-sub {
+  font-size: 0.625rem;
+  font-weight: var(--peso-semi);
+  letter-spacing: .085em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.site-nav { margin-left: auto; }
+.site-nav ul { display: flex; align-items: center; gap: clamp(.5rem, .1rem + 1vw, 1.35rem); }
+.site-nav a {
+  display: inline-block;
+  font-size: var(--t-sm);
+  font-weight: var(--peso-medio);
+  color: var(--texto);
+  padding: .45rem .15rem;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transicao), border-color var(--transicao);
+}
+.site-nav a:hover { color: var(--cor-primaria); }
+.site-nav a[aria-current="page"] {
+  color: var(--cor-primaria);
+  font-weight: var(--peso-semi);
+  border-bottom-color: var(--verde-marca);
+}
+
+.header-acoes { flex: none; display: flex; align-items: center; gap: var(--esp-sm); }
+.header-tel {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: var(--t-sm);
+  font-weight: var(--peso-semi);
+  color: var(--texto-forte);
+}
+.header-tel svg { width: 16px; height: 16px; color: var(--cor-primaria); }
+
+/* Botão hambúrguer — CSS puro (no Elementor: menu responsivo nativo) */
+.nav-check { position: absolute; opacity: 0; width: 44px; height: 44px; right: 0; top: 50%; transform: translateY(-50%); cursor: pointer; display: none; }
+.nav-abre {
+  display: none;
+  margin-left: auto;
+  width: 44px; height: 44px;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-sm);
+  background: var(--branco);
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-secundaria);
+}
+.nav-abre svg { width: 22px; height: 22px; }
+.nav-cta-mobile { display: none; }
+
+
+/* ==========================================================================
+   07. HERO
+   ========================================================================== */
+/* Hero: fundo verde profundo + título branco/lima (guia, item 06).
+   A malha de losangos entra por cima, em baixa opacidade (guia, item 05). */
+.hero {
+  position: relative;
+  background:
+    var(--textura-losango),
+    radial-gradient(900px 460px at 84% 16%, rgba(70, 177, 72, .22), transparent 64%),
+    linear-gradient(160deg, #16290A 0%, var(--verde-profundo) 58%, #0B1703 100%);
+  color: rgba(255, 255, 255, .80);
+  padding-block: clamp(3rem, 2rem + 3.4vw, 5.25rem) clamp(4rem, 2.6rem + 4.6vw, 7rem);
+  overflow: hidden;
+}
+.hero h1 { color: var(--branco); }
+.hero .lead { color: rgba(255, 255, 255, .80); }
+.hero .olho { color: var(--verde-limao); }
+.hero .olho::before { background: var(--verde-limao); }
+.hero-grade {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(2rem, 1rem + 4vw, 4rem);
+  align-items: center;
+}
+.hero h1 { margin-bottom: var(--esp-lg); }
+.hero h1 em { font-style: normal; color: var(--verde-limao); }
+.hero .lead { margin-bottom: var(--esp-xl); max-width: 54ch; }
+.hero .grupo-botoes { margin-bottom: var(--esp-xl); }
+
+.hero-confianca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-md) var(--esp-lg);
+  padding-top: var(--esp-lg);
+  border-top: 1px solid rgba(255, 255, 255, .16);
+}
+.hero-confianca li {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: var(--t-sm);
+  font-weight: var(--peso-medio);
+  color: rgba(255, 255, 255, .92);
+}
+.hero-confianca svg { width: 18px; height: 18px; color: var(--verde-limao); flex: none; }
+
+.hero-midia { position: relative; }
+.hero-cartao-flutuante {
+  position: absolute;
+  left: -1.25rem;
+  bottom: -1.25rem;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: var(--esp-md) var(--esp-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--esp-md);
+  max-width: 280px;
+}
+.hero-cartao-flutuante .numero {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  font-weight: var(--peso-extra);
+  color: var(--cor-primaria);
+  line-height: 1;
+}
+.hero-cartao-flutuante p { font-size: var(--t-xs); line-height: 1.4; color: var(--texto-suave); }
+
+/* Cabeçalho de página interna — mesma lógica do hero: bloco escuro,
+   para depois alternar com blocos claros (guia, item 06). */
+.pagina-topo {
+  position: relative;
+  background:
+    var(--textura-losango),
+    radial-gradient(760px 340px at 86% 0%, rgba(70, 177, 72, .20), transparent 62%),
+    linear-gradient(160deg, #16290A 0%, var(--verde-profundo) 70%);
+  color: rgba(255, 255, 255, .80);
+  padding-block: clamp(2rem, 1.4rem + 2vw, 3.25rem) clamp(3.25rem, 2.2rem + 3.4vw, 5.5rem);
+  overflow: hidden;
+}
+.pagina-topo h1 { margin-bottom: var(--esp-lg); color: var(--branco); }
+.pagina-topo .lead { max-width: 60ch; color: rgba(255, 255, 255, .80); }
+.pagina-topo .olho { color: var(--verde-limao); }
+.pagina-topo .olho::before { background: var(--verde-limao); }
+.pagina-topo-grade {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: clamp(1.5rem, .8rem + 3vw, 3.5rem);
+  align-items: center;
+}
+
+/* Trilha (breadcrumb) — terreno para schema BreadcrumbList */
+.trilha { margin-bottom: var(--esp-md); }
+.trilha ol { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; font-size: var(--t-xs); color: rgba(255, 255, 255, .62); }
+.trilha li { display: flex; align-items: center; gap: .4rem; }
+.trilha li + li::before { content: "/"; color: rgba(255, 255, 255, .32); }
+.trilha a:hover { color: var(--verde-limao); text-decoration: underline; }
+.trilha [aria-current="page"] { color: var(--branco); font-weight: var(--peso-medio); }
+
+
+/* ==========================================================================
+   08. CARDS E GRADE DE SERVIÇOS
+   ========================================================================== */
+.card {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: var(--esp-xl);
+  transition: border-color var(--transicao), box-shadow var(--transicao), transform var(--transicao);
+}
+
+.card-servico { display: flex; flex-direction: column; height: 100%; }
+.card-servico:hover {
+  border-color: var(--cor-primaria-borda);
+  box-shadow: var(--sombra);
+  transform: translateY(-3px);
+}
+.card-servico h3 { margin-bottom: var(--esp-sm); }
+.card-servico p { font-size: var(--t-sm); margin-bottom: var(--esp-lg); }
+.card-servico .link-seta { margin-top: auto; }
+
+.icone-caixa {
+  width: 52px; height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--raio-sm);
+  background: var(--cor-primaria-suave);
+  color: var(--cor-primaria);
+  margin-bottom: var(--esp-lg);
+}
+.icone-caixa svg { width: 26px; height: 26px; }
+.secao--escura .icone-caixa { background: rgba(255, 255, 255, .1); color: var(--cor-acento); }
+
+.lista-check { display: grid; gap: var(--esp-sm); }
+.lista-check li { display: flex; align-items: flex-start; gap: .65rem; font-size: var(--t-sm); }
+.lista-check svg { width: 20px; height: 20px; flex: none; color: var(--cor-primaria); margin-top: .12rem; }
+.secao--escura .lista-check svg { color: var(--cor-acento); }
+
+
+/* ==========================================================================
+   09. PROVA SOCIAL — números e logos de clientes
+   ========================================================================== */
+.numeros { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--esp-lg); }
+.numero-item {
+  text-align: center;
+  padding: var(--esp-lg) var(--esp-md);
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+.numero-item .valor {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.9rem, 1.4rem + 1.7vw, 2.75rem);
+  font-weight: var(--peso-extra);
+  color: var(--cor-primaria);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+.numero-item .rotulo { display: block; margin-top: .35rem; font-size: var(--t-sm); color: var(--texto-suave); }
+.numero-item .valor--placeholder { color: var(--texto-suave); font-size: 1.5rem; }
+.secao--escura .numero-item { background: rgba(255, 255, 255, .05); border-color: rgba(255, 255, 255, .12); }
+.secao--escura .numero-item .valor  { color: var(--branco); }
+.secao--escura .numero-item .rotulo { color: rgba(255, 255, 255, .7); }
+
+/* Faixa de logos de clientes */
+.faixa-logos-titulo {
+  text-align: center;
+  font-size: var(--t-xs);
+  font-weight: var(--peso-semi);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  margin-bottom: var(--esp-lg);
+}
+.faixa-logos {
+  display: grid;
+  /* auto-fit: a faixa se acomoda com 4, 6 ou 8 logos sem sobra */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--esp-lg) var(--esp-md);
+  align-items: center;
+}
+.faixa-logos--densa { grid-template-columns: repeat(auto-fit, minmax(124px, 1fr)); }
+
+/* Cada logo é um <img> de assets/logos/. O tratamento (dessaturar + baixar
+   opacidade) uniformiza logos de origens muito diferentes; no hover o logo
+   volta ao natural. No Elementor: filtros CSS do widget de imagem. */
+.faixa-logos li { display: grid; place-items: center; }
+.faixa-logos img,
+.marquee img {
+  width: auto;
+  max-width: 100%;
+  height: 46px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: .62;
+  transition: opacity var(--transicao), filter var(--transicao);
+}
+.faixa-logos img:hover,
+.marquee img:hover { opacity: 1; filter: grayscale(0); }
+.faixa-logos--densa img { height: 38px; }
+
+/* --- Carrossel infinito de clientes --------------------------------------
+   Duas cópias da mesma lista correndo lado a lado: quando a primeira sai de
+   cena, a segunda já ocupou o lugar, e o laço reinicia sem salto.
+   No Elementor: widget "Carrossel de imagens" com autoplay e loop. */
+.carrossel-logos {
+  display: grid;
+  gap: var(--esp-lg);
+  overflow: hidden;
+  /* esmaece as pontas, para o corte não parecer defeito */
+  /* o logo some bem antes da borda: a faixa termina em desvanecimento,
+     não num corte seco na lateral da tela */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 18%, #000 82%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 18%, #000 82%, transparent 100%);
+}
+.marquee { display: flex; width: max-content; }
+.marquee-grupo {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 1rem + 3vw, 4rem);
+  padding-right: clamp(2rem, 1rem + 3vw, 4rem);
+  flex: none;
+}
+.marquee-grupo li { flex: none; }
+.marquee--esq { animation: correr-esq 150s linear infinite; }
+.marquee--dir { animation: correr-dir 185s linear infinite; }
+.carrossel-logos:hover .marquee { animation-play-state: paused; }
+
+@keyframes correr-esq {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes correr-dir {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* --- Mural da carteira por setor ----------------------------------------- */
+.mural-setores { display: grid; gap: var(--esp-2xl); }
+.setor-titulo {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: var(--t-sm);
+  font-weight: var(--peso-bold);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  padding-bottom: var(--esp-sm);
+  margin-bottom: var(--esp-lg);
+  border-bottom: 1px solid var(--borda);
+}
+
+
+/* ==========================================================================
+   10. DIFERENCIAIS E PROCESSO
+   ========================================================================== */
+.diferencial { display: flex; gap: var(--esp-md); align-items: flex-start; }
+.diferencial .icone-caixa { margin-bottom: 0; width: 46px; height: 46px; }
+.diferencial .icone-caixa svg { width: 22px; height: 22px; }
+.diferencial h3 { font-size: 1.05rem; margin-bottom: .35rem; }
+.diferencial p { font-size: var(--t-sm); color: var(--texto-suave); }
+.secao--escura .diferencial p { color: rgba(255, 255, 255, .72); }
+
+.passo { padding-top: var(--esp-lg); border-top: 3px solid var(--cor-primaria-borda); }
+.passo .indice {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-xs);
+  font-weight: var(--peso-extra);
+  letter-spacing: .1em;
+  color: var(--cor-primaria);
+  display: block;
+  margin-bottom: .5rem;
+}
+.passo h3 { font-size: 1.05rem; margin-bottom: .4rem; }
+.passo p { font-size: var(--t-sm); color: var(--texto-suave); }
+
+
+/* ==========================================================================
+   11. FAQ — <details> nativo (no Elementor: widget Accordion)
+   ========================================================================== */
+.faq { display: grid; gap: var(--esp-sm); }
+.faq-item {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+}
+.faq-item[open] { border-color: var(--cor-primaria-borda); box-shadow: var(--sombra-sm); }
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-md);
+  cursor: pointer;
+  list-style: none;
+  padding: var(--esp-lg);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-base);
+  font-weight: var(--peso-semi);
+  color: var(--texto-forte);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "";
+  flex: none;
+  width: 11px; height: 11px;
+  border-right: 2px solid var(--cor-primaria);
+  border-bottom: 2px solid var(--cor-primaria);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform var(--transicao);
+}
+.faq-item[open] summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.faq-item summary:hover { background: var(--fundo-alt); }
+.faq-resposta { padding: 0 var(--esp-lg) var(--esp-lg); font-size: var(--t-sm); }
+
+
+/* ==========================================================================
+   12. FORMULÁRIO — bloco único, reutilizado no site inteiro
+   ========================================================================== */
+.form-bloco-grade {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: clamp(2rem, 1rem + 4vw, 4rem);
+  align-items: center;
+}
+
+.form-cartao {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra-lg);
+  padding: clamp(1.5rem, 1rem + 1.6vw, 2.5rem);
+  color: var(--texto);
+}
+.form-cartao h3 { margin-bottom: .35rem; }
+.form-cartao .form-sub { font-size: var(--t-sm); color: var(--texto-suave); margin-bottom: var(--esp-lg); }
+
+.campos { display: grid; gap: var(--esp-md); }
+.campos--2col { grid-template-columns: 1fr 1fr; }
+.campo { display: flex; flex-direction: column; gap: .35rem; }
+.campo--largo { grid-column: 1 / -1; }
+.campo label { font-size: var(--t-xs); font-weight: var(--peso-semi); color: var(--texto-forte); }
+.campo .obrigatorio { color: #B3261E; }
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: .8rem .9rem;
+  font-size: var(--t-sm);
+  color: var(--texto-forte);
+  background: var(--branco);
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-sm);
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+.campo textarea { resize: vertical; min-height: 96px; }
+.campo input::placeholder, .campo textarea::placeholder { color: #8E9C97; }
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(29, 158, 117, .18);
+}
+.campo select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2361736D%27 stroke-width=%272.2%27 stroke-linecap=%27round%27%3E%3Cpath d=%27M6 9l6 6 6-6%27/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .8rem center;
+  background-size: 17px;
+  padding-right: 2.4rem;
+}
+.campo-ajuda { font-size: var(--t-xs); color: var(--texto-suave); }
+
+/* Upload de curriculo (aba "Quero trabalhar com voces") */
+.campo-arquivo {
+  border: 1.5px dashed var(--borda-forte);
+  border-radius: var(--raio-sm);
+  padding: var(--esp-lg);
+  text-align: center;
+  background: var(--fundo-alt);
+}
+.campo-arquivo svg { width: 26px; height: 26px; color: var(--cor-primaria); margin: 0 auto .5rem; }
+.campo-arquivo input[type="file"] { font-size: var(--t-xs); margin-top: .5rem; }
+
+.consentimento {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+  line-height: 1.5;
+}
+.consentimento input { margin-top: .2rem; width: 16px; height: 16px; flex: none; accent-color: var(--cor-primaria); }
+.consentimento a { color: var(--cor-primaria); text-decoration: underline; }
+
+.form-rodape { margin-top: var(--esp-lg); display: grid; gap: var(--esp-sm); }
+.form-nota { font-size: var(--t-xs); color: var(--texto-suave); text-align: center; }
+.form-alternativa {
+  margin-top: var(--esp-md);
+  padding-top: var(--esp-md);
+  border-top: 1px solid var(--borda);
+  text-align: center;
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+}
+.form-alternativa a { color: var(--cor-primaria); font-weight: var(--peso-semi); }
+
+
+/* ==========================================================================
+   13. ABAS — CSS puro (no Elementor: widget Tabs)
+   ========================================================================== */
+.abas { position: relative; }
+.aba-radio { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.aba-lista {
+  display: inline-flex;
+  gap: .25rem;
+  padding: .3rem;
+  background: var(--fundo-alt);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  margin-bottom: var(--esp-xl);
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.aba-lista label {
+  cursor: pointer;
+  padding: .7rem 1.35rem;
+  border-radius: var(--raio);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-sm);
+  font-weight: var(--peso-bold);
+  color: var(--texto-suave);
+  transition: background var(--transicao), color var(--transicao);
+  white-space: nowrap;
+}
+.aba-lista label:hover { color: var(--cor-primaria); }
+.aba-painel { display: none; }
+
+#aba-orcamento:checked ~ .aba-lista label[for="aba-orcamento"],
+#aba-trabalhe:checked  ~ .aba-lista label[for="aba-trabalhe"] {
+  background: var(--verde-limao);
+  color: var(--verde-profundo);
+  box-shadow: var(--sombra-sm);
+}
+#aba-orcamento:focus-visible ~ .aba-lista label[for="aba-orcamento"],
+#aba-trabalhe:focus-visible  ~ .aba-lista label[for="aba-trabalhe"] {
+  outline: 3px solid var(--verde-marca);
+  outline-offset: 2px;
+}
+#aba-orcamento:checked ~ .aba-conteudo #painel-orcamento,
+#aba-trabalhe:checked  ~ .aba-conteudo #painel-trabalhe { display: block; }
+
+
+/* ==========================================================================
+   14. CTA FINAL
+   ========================================================================== */
+.cta-final {
+  position: relative;
+  background:
+    var(--textura-losango),
+    radial-gradient(680px 340px at 12% 0%, rgba(70, 177, 72, .28), transparent 62%),
+    var(--verde-profundo);
+  color: rgba(255, 255, 255, .82);
+  padding-block: clamp(2.75rem, 2rem + 2.6vw, 4.25rem);
+  overflow: hidden;
+}
+.cta-final-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-xl);
+  flex-wrap: wrap;
+}
+.cta-final h2 { color: var(--branco); margin-bottom: .5rem; }
+.cta-final p { max-width: 52ch; font-size: var(--t-sm); }
+
+
+/* ==========================================================================
+   15. FOOTER — bloco global
+   ========================================================================== */
+.site-footer { background: #0B1703; color: rgba(255, 255, 255, .68); font-size: var(--t-sm); }
+.footer-grade {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.4fr;
+  gap: var(--esp-xl);
+  padding-block: clamp(2.75rem, 2rem + 2.4vw, 4rem);
+}
+.site-footer .logo-nome { color: var(--branco); }
+.site-footer .logo-sub  { color: rgba(255, 255, 255, .55); }
+.site-footer .logo-marca { color: var(--branco); }
+.footer-sobre { margin-top: var(--esp-md); max-width: 34ch; font-size: var(--t-sm); }
+
+.footer-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-xs);
+  font-weight: var(--peso-bold);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--branco);
+  margin-bottom: var(--esp-md);
+}
+.footer-lista { display: grid; gap: .6rem; }
+.footer-lista a { transition: color var(--transicao); }
+.footer-lista a:hover { color: var(--verde-limao); }
+
+.footer-contato { display: grid; gap: var(--esp-md); }
+.footer-contato li { display: flex; gap: .65rem; align-items: flex-start; }
+.footer-contato svg { width: 18px; height: 18px; color: var(--verde-limao); flex: none; margin-top: .18rem; }
+.footer-contato a:hover { color: var(--branco); text-decoration: underline; }
+.footer-contato .rotulo {
+  display: block;
+  font-size: 0.6875rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .45);
+}
+
+.footer-redes { display: flex; gap: .6rem; margin-top: var(--esp-lg); }
+.footer-redes a {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: var(--raio-sm);
+  color: rgba(255, 255, 255, .8);
+  transition: background var(--transicao), border-color var(--transicao), color var(--transicao);
+}
+.footer-redes a:hover { background: var(--verde-limao); border-color: var(--verde-limao); color: var(--verde-profundo); }
+.footer-redes svg { width: 18px; height: 18px; }
+
+.footer-base {
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  padding-block: var(--esp-lg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-md);
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--t-xs);
+  color: rgba(255, 255, 255, .5);
+}
+.footer-base a:hover { color: var(--branco); text-decoration: underline; }
+.footer-base nav { display: flex; flex-wrap: wrap; gap: var(--esp-md); }
+
+
+/* ==========================================================================
+   16. BANNER LGPD — visual, sem armazenamento (protótipo estático).
+       No WordPress: plugin de consentimento gravando a escolha.
+   ========================================================================== */
+.lgpd-check { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.lgpd-banner {
+  position: fixed;
+  left: var(--esp-md);
+  right: var(--esp-md);
+  bottom: var(--esp-md);
+  z-index: 200;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-lg);
+  padding: var(--esp-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--esp-lg);
+  flex-wrap: wrap;
+  max-width: 1040px;
+  margin-inline: auto;
+}
+.lgpd-banner p { font-size: var(--t-xs); color: var(--texto); flex: 1 1 320px; }
+.lgpd-banner a { color: var(--cor-primaria); text-decoration: underline; }
+.lgpd-acoes { display: flex; gap: .5rem; flex-wrap: wrap; }
+.lgpd-acoes label { cursor: pointer; }
+.lgpd-check:checked ~ .lgpd-banner { display: none; }
+
+
+/* ==========================================================================
+   17. PLACEHOLDERS DE IMAGEM
+       Cada bloco abaixo = uma foto real a ser fornecida pelo cliente.
+       O texto ALT sugerido fica num comentário HTML ao lado de cada um.
+   ========================================================================== */
+.img-placeholder {
+  position: relative;
+  border-radius: var(--raio-lg);
+  border: 1.5px dashed var(--cor-primaria-borda);
+  background:
+    linear-gradient(135deg, rgba(29, 158, 117, .10), rgba(29, 158, 117, .03)),
+    var(--fundo-alt);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: var(--esp-xl);
+  color: var(--texto-suave);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.img-placeholder svg { width: 34px; height: 34px; color: var(--verde-marca); margin: 0 auto var(--esp-sm); opacity: .75; }
+.img-placeholder .rotulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-xs);
+  font-weight: var(--peso-bold);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--cor-primaria);
+}
+.img-placeholder .desc { font-size: var(--t-xs); margin-top: .3rem; max-width: 34ch; margin-inline: auto; }
+.img-placeholder--alta  { aspect-ratio: 3 / 4; }
+.img-placeholder--larga { aspect-ratio: 16 / 9; }
+.img-placeholder--mapa  { aspect-ratio: 21 / 9; border-radius: var(--raio); }
+
+.nota-prototipo {
+  background: #FDF3DF;
+  border: 1px dashed #E3C271;
+  border-radius: var(--raio-sm);
+  padding: var(--esp-md) var(--esp-lg);
+  font-size: var(--t-xs);
+  color: #6E5310;
+}
+.nota-prototipo strong { color: #6E5310; }
+
+
+/* ==========================================================================
+   18. TEXTO LONGO (páginas legais) E CONTATO
+   ========================================================================== */
+.texto-legal h2 { font-size: 1.35rem; margin-top: var(--esp-2xl); margin-bottom: var(--esp-md); }
+.texto-legal h2:first-of-type { margin-top: 0; }
+.texto-legal p { margin-bottom: var(--esp-md); }
+.texto-legal ul { display: grid; gap: .5rem; margin-bottom: var(--esp-lg); padding-left: 1.15rem; list-style: disc; }
+.texto-legal li::marker { color: var(--verde-marca); }
+
+.contato-item { display: flex; gap: var(--esp-md); align-items: flex-start; }
+.contato-item .icone-caixa { margin-bottom: 0; width: 44px; height: 44px; flex: none; }
+.contato-item .icone-caixa svg { width: 21px; height: 21px; }
+.contato-item h3 { font-size: .95rem; margin-bottom: .2rem; }
+.contato-item p, .contato-item a { font-size: var(--t-sm); color: var(--texto-suave); }
+.contato-item a:hover { color: var(--cor-primaria); text-decoration: underline; }
+
+
+/* ==========================================================================
+   19. RESPONSIVO
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .faixa-logos { grid-template-columns: repeat(auto-fit, minmax(136px, 1fr)); }
+  .footer-grade { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 980px) {
+  /* Menu mobile — abre e fecha só com CSS */
+  .nav-abre { display: inline-flex; }
+  .nav-check { display: block; }
+  .header-acoes { display: none; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: calc(var(--gutter) * -1);
+    right: calc(var(--gutter) * -1);
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    box-shadow: var(--sombra);
+    padding: var(--esp-md) var(--gutter) var(--esp-lg);
+  }
+  .nav-check:checked ~ .site-nav { display: block; }
+  .site-nav ul { flex-direction: column; align-items: stretch; gap: 0; }
+  .site-nav li { border-bottom: 1px solid var(--borda); }
+  .site-nav a { display: block; padding: .9rem 0; font-size: 1rem; border-bottom: none; }
+  .site-nav a[aria-current="page"] { border-bottom: none; }
+  .nav-cta-mobile { display: block; border-bottom: none; padding-top: var(--esp-md); }
+  .nav-cta-mobile .btn { width: 100%; }
+
+  .hero-grade,
+  .pagina-topo-grade,
+  .duas-colunas,
+  .form-bloco-grade { grid-template-columns: 1fr; }
+  .hero-midia { order: -1; }
+  .hero-cartao-flutuante { position: static; margin-top: var(--esp-md); max-width: none; }
+
+  .grade--4 { grid-template-columns: repeat(2, 1fr); }
+  .grade--3 { grid-template-columns: repeat(2, 1fr); }
+  .numeros  { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .grade--2, .grade--3, .grade--4 { grid-template-columns: 1fr; }
+  .campos--2col { grid-template-columns: 1fr; }
+  .faixa-logos { grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); }
+  .footer-grade { grid-template-columns: 1fr; gap: var(--esp-xl); }
+  .cta-final-inner { flex-direction: column; align-items: flex-start; }
+  .grupo-botoes .btn { flex: 1 1 100%; }
+  .lgpd-banner { padding: var(--esp-md); }
+  .aba-lista { width: 100%; }
+  .aba-lista label { flex: 1 1 auto; text-align: center; }
+}
+
+
+/* ==========================================================================
+   20. IMPRESSÃO
+   ========================================================================== */
+@media print {
+  .site-header, .lgpd-banner, .cta-final, .btn { display: none; }
+  body { color: #000; }
+}
+
+
+/* ==========================================================================
+   21. UTILITÁRIOS DE ESPAÇAMENTO
+       Poucos e nomeados pela escala do bloco 01 — no Elementor viram os
+       controles de margem do container, não classes.
+   ========================================================================== */
+.mt-sm  { margin-top: var(--esp-sm); }
+.mt-md  { margin-top: var(--esp-md); }
+.mt-lg  { margin-top: var(--esp-lg); }
+.mt-xl  { margin-top: var(--esp-xl); }
+.mt-2xl { margin-top: var(--esp-2xl); }
+.mb-lg  { margin-bottom: var(--esp-lg); }
+.mb-xl  { margin-bottom: var(--esp-xl); }
+.texto-centro { text-align: center; }
+.grupo-botoes--centro { justify-content: center; }
+
+/* Foco de teclado no botão do menu mobile (o input real é invisível) */
+.nav-check:focus-visible + .nav-abre {
+  outline: 3px solid var(--verde-marca);
+  outline-offset: 2px;
+}
+
+/* Placeholder de número mantém o tom apagado também em seção escura */
+.secao--escura .numero-item .valor--placeholder { color: rgba(255, 255, 255, .55); }
+
+
+/* ==========================================================================
+   22. LINGUAGEM GRÁFICA DA MARCA (guia de identidade, item 05)
+   ========================================================================== */
+
+/* --- Recortes diagonais: transição entre áreas claras e escuras -----------
+   No Elementor isto é o "Divisor de forma" (Shape Divider) tipo Inclinado.
+   A cor do divisor é a do bloco SEGUINTE — daí os modificadores. */
+.com-diagonal { position: relative; }
+.com-diagonal::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: clamp(26px, 4.5vw, 76px);
+  background: var(--divisor-cor, var(--fundo));
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  pointer-events: none;
+}
+.com-diagonal--para-alt    { --divisor-cor: var(--fundo-alt); }
+.com-diagonal--para-branco { --divisor-cor: var(--fundo); }
+
+/* --- Fotografia tratada: P&B ou baixa saturação com sobreposição verde ----
+   O guia (item 05) define esse tratamento. Aqui a regra já fica pronta:
+   quando a foto real entrar no lugar do placeholder, ela nasce no padrão.
+   No Elementor: filtros CSS do widget de imagem + camada de sobreposição. */
+.foto-tratada {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra);
+  aspect-ratio: 4 / 3;
+  margin: 0;
+}
+.foto-tratada img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* baixa saturação, não P&B: o verde da cena sobrevive e conversa com a
+     sobreposição, em vez de brigar com ela */
+  filter: saturate(.38) contrast(1.06) brightness(.98);
+  transition: transform var(--transicao), filter var(--transicao);
+}
+.foto-tratada::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, rgba(70, 177, 72, .26), rgba(17, 32, 5, .48));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+/* no hover a foto respira: aproxima e recupera um pouco de cor */
+.midia-coluna .foto-tratada img:hover,
+.hero-midia .foto-tratada img:hover { transform: scale(1.03); filter: saturate(.6) contrast(1.04); }
+
+.foto-tratada--larga { aspect-ratio: 16 / 9; }
+.foto-tratada--mapa  { aspect-ratio: 21 / 9; }
+
+/* --- Placeholder de imagem sobre fundo escuro ----------------------------- */
+.hero .img-placeholder,
+.pagina-topo .img-placeholder,
+.secao--escura .img-placeholder {
+  border-color: rgba(175, 215, 69, .34);
+  background:
+    linear-gradient(135deg, rgba(70, 177, 72, .20), rgba(175, 215, 69, .06)),
+    rgba(255, 255, 255, .03);
+  color: rgba(255, 255, 255, .68);
+}
+.hero .img-placeholder .rotulo,
+.pagina-topo .img-placeholder .rotulo,
+.secao--escura .img-placeholder .rotulo,
+.hero .img-placeholder svg,
+.pagina-topo .img-placeholder svg,
+.secao--escura .img-placeholder svg { color: var(--verde-limao); }
+
+/* --- Selo e etiqueta sobre fundo escuro ----------------------------------- */
+.hero .selo,
+.pagina-topo .selo,
+.secao--escura .selo {
+  background: rgba(255, 255, 255, .07);
+  border-color: rgba(175, 215, 69, .38);
+  color: var(--verde-limao);
+}
+
+/* Transição diagonal indo para um bloco escuro */
+.com-diagonal--para-escuro { --divisor-cor: var(--verde-profundo); }
+
+/* Logotipo monocromático (guia, item 02): preto sobre fundo claro.
+   No header o "preto" é o verde profundo da marca; no footer, branco. */
+.logo-marca { color: var(--verde-profundo); }
+.logo-nome  { letter-spacing: .01em; text-transform: lowercase; }
+
+/* Seção comum com recorte diagonal precisa de folga extra embaixo,
+   para o texto não encostar na diagonal */
+.secao.com-diagonal { padding-bottom: calc(var(--secao-y) + clamp(26px, 4.5vw, 76px)); }
+
+/* Imagem principal do hero — foto tratada ou, na ausência dela, o vetor */
+.hero-arte { width: 100%; height: auto; display: block; }
+.foto-tratada.hero-arte { aspect-ratio: 5 / 4; box-shadow: var(--sombra-lg); }
+
+
+/* ==========================================================================
+   23. ARTE VETORIAL (gerada por arte.py)
+       Entrou no lugar dos placeholders tracejados. Quando a foto real
+       chegar, troque o <img class="arte"> por <img class="foto-tratada">.
+   ========================================================================== */
+.arte {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra);
+}
+.arte--mapa { aspect-ratio: 21 / 9; object-fit: cover; }
+
+/* Coluna de mídia: a arte "respira" e ganha um leve destaque no hover */
+.midia-coluna .arte { transition: transform var(--transicao), box-shadow var(--transicao); }
+.midia-coluna .arte:hover { transform: translateY(-4px); box-shadow: var(--sombra-lg); }
+
+/* Duas colunas com mídia de um lado: a arte não estica além do razoável */
+.duas-colunas--midia { align-items: center; }
+.duas-colunas--midia .midia-coluna { max-width: 520px; width: 100%; justify-self: center; }
+
+/* Diferenciais empilhados ao lado da arte */
+.lista-diferenciais { display: grid; gap: var(--esp-lg); }
+
+
+/* ==========================================================================
+   24. FECHO DA PÁGINA — formulário + CTA sob uma textura contínua
+       Antes eram duas seções escuras vizinhas, cada uma com a própria
+       textura de losangos. Como o padrão reinicia a cada elemento, aparecia
+       uma emenda na divisa. Agora a textura vive no invólucro.
+   ========================================================================== */
+.faixa-escura {
+  position: relative;
+  background:
+    var(--textura-losango),
+    radial-gradient(820px 420px at 8% 6%, rgba(70, 177, 72, .18), transparent 62%),
+    radial-gradient(760px 380px at 92% 96%, rgba(175, 215, 69, .10), transparent 60%),
+    var(--verde-profundo);
+  overflow: hidden;
+}
+/* as seções de dentro entram transparentes: quem pinta é o invólucro */
+.faixa-escura .secao--escura,
+.faixa-escura .cta-final { background: none; }
+.faixa-escura .cta-final { padding-top: 0; }
+
+
+/* ==========================================================================
+   25. CARROSSÉIS POR SETOR (página de Serviços)
+   ========================================================================== */
+.mural-setores .setor { overflow: hidden; }
+.mural-setores .marquee-grupo {
+  gap: clamp(1.6rem, 1rem + 2.4vw, 3.2rem);
+  padding-right: clamp(1.6rem, 1rem + 2.4vw, 3.2rem);
+}
+.mural-setores .marquee-grupo li { display: grid; place-items: center; }
+.mural-setores .marquee img { height: 40px; }
+.mural-setores .setor {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+}
+.mural-setores .setor-titulo { margin-bottom: var(--esp-md); }
+
+
+/* ==========================================================================
+   26. ABAS DO CONTATO — os dois painéis começam na mesma altura
+       Com align-items:center, o texto se centralizava contra o formulário —
+       e como o formulário de currículo é mais alto que o de orçamento, os
+       títulos das duas abas caíam em alturas diferentes ao alternar.
+   ========================================================================== */
+.aba-painel .form-bloco-grade { align-items: start; }
+
+
+/* ==========================================================================
+   27. AJUSTES RESPONSIVOS DAS NOVIDADES
+   ========================================================================== */
+@media (max-width: 980px) {
+  .duas-colunas--midia .midia-coluna { max-width: 460px; }
+  .mural-setores .marquee img { height: 34px; }
+}
+
+
+/* ==========================================================================
+   28. CARTEIRA POR SETOR, EM ABAS
+       Nove carrosséis empilhados viravam uma parede monótona. Em abas, o
+       mesmo conteúdo cabe num bloco só — e a fileira de rótulos já conta a
+       história da variedade antes de qualquer logo aparecer.
+       CSS puro (radio + :checked). No Elementor: widget Tabs.
+   ========================================================================== */
+.setores { position: relative; }
+.setor-radio { position: absolute; width: 1px; height: 1px; opacity: 0; }
+
+.setor-abas {
+  display: flex; flex-wrap: wrap; gap: .4rem;
+  justify-content: center;
+  margin-bottom: var(--esp-xl);
+}
+.setor-abas label {
+  cursor: pointer;
+  padding: .55rem 1.05rem;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-full);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-xs);
+  font-weight: var(--peso-semi);
+  color: var(--texto-suave);
+  background: var(--branco);
+  transition: color var(--transicao), border-color var(--transicao),
+              background var(--transicao);
+  white-space: nowrap;
+}
+.setor-abas label:hover { color: var(--cor-primaria); border-color: var(--cor-primaria-borda); }
+
+.setor-painel { display: none; }
+.setor-painel .faixa-logos {
+  padding: var(--esp-xl) var(--esp-lg);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: var(--branco);
+  min-height: 190px;
+  align-content: center;
+}
+
+/* Uma regra por setor: são nove, fixos, conhecidos em tempo de projeto.
+   Aba acesa em verde-limão com texto escuro, como manda o guia. */
+#set-industria:checked     ~ .setor-abas label[for="set-industria"],
+#set-postos:checked        ~ .setor-abas label[for="set-postos"],
+#set-construcao:checked    ~ .setor-abas label[for="set-construcao"],
+#set-seguranca:checked     ~ .setor-abas label[for="set-seguranca"],
+#set-varejo:checked        ~ .setor-abas label[for="set-varejo"],
+#set-logistica:checked     ~ .setor-abas label[for="set-logistica"],
+#set-saude:checked         ~ .setor-abas label[for="set-saude"],
+#set-servicos:checked      ~ .setor-abas label[for="set-servicos"],
+#set-institucional:checked ~ .setor-abas label[for="set-institucional"] {
+  background: var(--verde-limao);
+  border-color: var(--verde-intermediario);
+  color: var(--verde-profundo);
+  box-shadow: var(--sombra-sm);
+}
+
+#set-industria:checked     ~ .setor-paineis #painel-industria,
+#set-postos:checked        ~ .setor-paineis #painel-postos,
+#set-construcao:checked    ~ .setor-paineis #painel-construcao,
+#set-seguranca:checked     ~ .setor-paineis #painel-seguranca,
+#set-varejo:checked        ~ .setor-paineis #painel-varejo,
+#set-logistica:checked     ~ .setor-paineis #painel-logistica,
+#set-saude:checked         ~ .setor-paineis #painel-saude,
+#set-servicos:checked      ~ .setor-paineis #painel-servicos,
+#set-institucional:checked ~ .setor-paineis #painel-institucional {
+  display: block;
+  animation: painel-entra .45s var(--transicao) both;
+}
+@keyframes painel-entra { from { opacity: 0; transform: translateY(8px); } }
+
+/* foco de teclado: o radio é invisível, então o realce vai no rótulo */
+.setor-radio:focus-visible ~ .setor-abas label[for] { outline: none; }
+#set-industria:focus-visible     ~ .setor-abas label[for="set-industria"],
+#set-postos:focus-visible        ~ .setor-abas label[for="set-postos"],
+#set-construcao:focus-visible    ~ .setor-abas label[for="set-construcao"],
+#set-seguranca:focus-visible     ~ .setor-abas label[for="set-seguranca"],
+#set-varejo:focus-visible        ~ .setor-abas label[for="set-varejo"],
+#set-logistica:focus-visible     ~ .setor-abas label[for="set-logistica"],
+#set-saude:focus-visible         ~ .setor-abas label[for="set-saude"],
+#set-servicos:focus-visible      ~ .setor-abas label[for="set-servicos"],
+#set-institucional:focus-visible ~ .setor-abas label[for="set-institucional"] {
+  outline: 3px solid var(--verde-marca);
+  outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+  .setor-abas { justify-content: flex-start; }
+  .setor-painel .faixa-logos { padding: var(--esp-lg) var(--esp-md); min-height: 0; }
+}
